@@ -1,0 +1,176 @@
+.card-view{
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 4px 8px rgba(0, 0, 0, 0.04);
+    border-radius: 10px;
+    padding:10px;
+}
+.card-view-2{
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 4px 8px rgba(0, 0, 0, 0.04);
+    border-radius: 10px;
+    padding:10px;
+    margin:30px 15px 30px;
+}
+.card-view-3{
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 4px 8px rgba(0, 0, 0, 0.04);
+    border-radius: 10px;
+}
+.hide{
+    display:none;
+}
+.input-group{
+    padding:10px;
+    border-radius:4px;
+    background: #F4F8FC;
+    border:1px solid transparent;
+}
+.login-btn{
+    color:#170887;
+    font-size:15px;
+    background:#fff;
+    border:1px solid #fff ;
+    padding:8px 40px;
+    display:block;
+    margin:20px auto;
+    border-radius:20px;
+    font-size:16px;
+}
+.login-btn:focus{
+    outline: none;
+}
+.logo-login{
+    display:block;
+    margin:30px auto 0px;
+    width:180px
+}
+
+.signup-btn{
+    color:#fff;
+    font-size:15px;
+    background:#170887;
+    border:1px solid #170887;
+    padding:8px 40px;
+    display:block;
+    margin:20px auto;
+    border-radius:20px;
+    font-size:16px;
+}
+.signup-btn:focus{
+    outline: none;
+}
+.signup-image{
+    width:100%;
+}
+.text1{
+    color:#170887;
+    margin-top: 40px;
+}
+.text2{
+    font-size:16px
+}
+.text3{
+    font-weight:bold;
+    margin-top:50px;
+}
+.text4{
+    font-size:16px
+}
+.text4a{
+    font-weight:bold;
+    color:#170887;
+}
+.text4a a{
+    font-size:15px;
+    font-weight:normal;
+    color:#170887;
+}
+.text4a a:hover{
+    color:#170887;
+    text-decoration:none;
+}
+.text5a a{
+    font-size:15px;
+    font-weight:normal;
+    color:#fff;
+}
+.text5a a:hover{
+    color:#fff;
+    text-decoration:none;
+}
+.text6{
+    color:grey;
+    margin-left:10px;
+    font-size:1.1em
+}
+.ul-info{
+    margin-bottom:10px;
+}
+
+
+
+button:focus{
+    outline:none;
+}
+textarea{
+    padding:10px;
+    width:80%;
+    border-radius:4px;
+    background: #F4F8FC;
+    border:1px solid transparent;
+    margin:10px auto 10px;
+}
+
+
+
+/*media queries*/
+@media(min-width:200px){
+    .card-view{margin:30px 15px 30px;}
+    .card-view-3{width:300px; height:350px; margin:30px auto; }
+    .checkbox-div{width:90%; display:block; margin:auto}
+    .fms-left{float:left;}
+    .fms-right{float:right; background:#170887; width:300px; padding:30px 0 30px; margin-bottom: 30px;}
+    .input-group{margin:30px auto; width:90%;}
+    .ngo-signup-image{display:none}
+    .text1{font-size:23px}
+    .text3{font-size:1.9em}
+    .text5{ font-size:1.8em}
+}
+@media(min-width:560px){
+    .card-view-3{width:400px; height:350px; margin:40px auto; }
+    .fms-left{float:left;}
+    .fms-right{float:right; background:#170887; width:400px; padding:30px 0 30px; margin-bottom: 30px;}
+    .input-group{margin:30px auto; width:90%;}
+    .text1{font-size:26px}
+    .text3{font-size:2.3em}
+    .text5{ font-size:2.2em}
+}
+@media(min-width:768px){
+    .card-view{margin:30px auto 30px; display:block; width:500px;}
+    .card-view-2{min-height:470px}
+    .card-view-3{width:400px; height:350px; margin:50px auto; }
+    .checkbox-div{width:80%; display:block; margin:auto}
+    .fms-left{float:left;}
+    .fms-right{float:right; background:#170887; width:400px; padding:30px 0 30px; margin-bottom: 30px;}
+    .input-group{margin:25px auto; width:80%;}
+    .text1{font-size:24px}
+    .text3{font-size:2.5em}
+    .text5{ font-size:2em}
+}
+@media(min-width:992px){
+    .card-view{margin:30px 15px 30px;  width:90%;}
+    .card-view-2{min-height:400px}
+    .card-view-3{width:790px; height:350px; margin:50px auto 100px; }
+    .fms-right{height:350px; padding-top:50px;}
+    .for-md-screen{width:50%}
+    .ngo-signup-image{display:initial; margin-top:150px;}
+    .text1{font-size:26px}
+    .text3{font-size:2.8em}
+    .text5{ font-size:2.2em}
+}
+@media(min-width:1200px){
+    .card-view-2{min-height:410px}
+    .card-view-3{width:1000px; height:430px; margin:70px auto 100px; }
+    .fms-right{height:430px; padding-top:60px;}
+    .ngo-signup-image{display:initial; margin-top:100px;}
+    .text1{font-size:28px}
+    .text3{font-size:3em}
+    .text5{ font-size:2.5em}
+}
