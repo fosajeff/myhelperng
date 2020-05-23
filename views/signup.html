@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Sign up to have an account</title>
+        <link rel="stylesheet" href="../public/stylesheets/bootstrap.min.css"> 
+        <link rel="stylesheet" href="../public/stylesheets/login-signup.css"> 
+    </head>
+    <body>
+        <div>
+            <img src="../public/images/logo.png" class="logo-login">
+        </div>
+        <div id="signup-intro" class="container">
+            <div class="col-xs-12">
+                <h1 class="text3 text-center"> Sign up on MyHelperNG</h1>
+                <p class="text4 text-center">MyHelperNG is a platform where we match NGO's to the appropriate volunteers for the greater good</p>
+                <p class="text4 text-center">You can also register as a donor to help people in need</p>
+                <button id="donor-join" class="signup-btn">Register as a Donor</button>
+                <div class="col-sm-6">
+                    <div class="card-view-2">
+                        <h1 class="text-center text5">Join as a Volunteer</h1>
+                        <p class="text-center text4 text4a">No charges Apply</p>
+                        <p class="text-center text4">Find organisations where your skills are needed and you can make a difference</p>
+                        <button id="volunteer-join" class="signup-btn">Join today</button>
+                        <hr>
+                        <ul class="text4">
+                            <li class="ul-info">Find organizations your skills are needed</li>
+                            <li class="ul-info">Join organizations to be an active volunteer</li>
+                            <li class="ul-info">Interact with with other volunteers like you</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card-view-2">
+                        <h1 class="text-center text5">Join as NGO</h1>
+                        <p class="text-center text4 text4a">No charges Apply</p>
+                        <p class="text-center text4">Find volunteers who are ready to join you in making impact in the society</p>
+                        <button id="ngo-join" class="signup-btn">Join today</button>
+                        <hr>
+                        <ul class="text4">
+                            <li class="ul-info">Find volunteers that match the skill set your organisation needs</li>
+                            <li class="ul-info">Have more volunteers in your organisation</li>
+                            <li class="ul-info">Interact with volunteers to know if they suite what your organisation needs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 hide" id="donor-signup-part">
+            <div class="col-md-6">
+                <img src="../public/images/donor.png" class="ngo-signup-image signup-image">
+            </div>
+            <div class="col-md-6">
+                <div class="card-view">
+                    <h1 class="text-center text1">Join MyHelper.ng as a Donor</h1>
+                    <p class="text-center text2">Fill the form below to join as a Donor</p>
+                    <form method="" action="">
+                        <input class="input-group" type="text" placeholder="Name">
+                        <input class="input-group" type="text" placeholder="Email">
+                        <input class="input-group" type="text" placeholder="Address">
+                        <select class="input-group" placeholder="State">
+                            <option>State</option>
+                            <option>Lagos</option>
+                            <option>Ogun</option>
+                            <option>Abuja</option>
+                        </select>
+                        <input class="input-group" type="password" placeholder="Password">
+                        <input class="input-group" type="password" placeholder="Confirm Password">
+                        <input class="signup-btn" type="submit" value="Join">
+                        <p class="text-center text4 text4a"><a href="login.html">Already joined? If yes, login</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 hide" id="ngo-signup-part">
+            <div class="col-md-6">
+                <img src="../public/images/organisationlogin.png" class="ngo-signup-image signup-image">
+            </div>
+            <div class="col-md-6">
+                <div class="card-view">
+                    <h1 class="text-center text1">Join MyHelper.ng as NGO</h1>
+                    <p class="text-center text2">Fill the form below to join as NGO</p>
+                    <form method="" action="">
+                        <input class="input-group" type="text" placeholder="Name of Organisation">
+                        <input class="input-group" type="text" placeholder="Email">
+                        <input class="input-group" type="text" placeholder="Website">
+                        <input class="input-group" type="text" placeholder="Address">
+                        <select class="input-group" placeholder="State">
+                            <option>State</option>
+                            <option>Lagos</option>
+                            <option>Ogun</option>
+                            <option>Abuja</option>
+                        </select>
+                        <input class="input-group" type="password" placeholder="Password">
+                        <input class="input-group" type="password" placeholder="Confirm Password">
+                        <input class="signup-btn" type="submit" value="Join">
+                        <p class="text-center text4 text4a"><a href="login.html">Already joined? If yes, login</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 hide" id="volunteer-signup-part">
+            <div class="col-md-6">
+                <img src="../public/images/volunteer-login.png" class="ngo-signup-image signup-image">
+            </div>
+            <div class="col-md-6">
+                <div class="card-view">
+                    <h1 class="text-center text1">Join MyHelper.ng as a Volunteer</h1>
+                    <p class="text-center text2">Fill the form below to join as a Volunteer</p>
+                    <form method="" action=""></form>
+                        <input class="input-group" type="text" placeholder="FULL NAME">
+                        <input class="input-group" type="text" placeholder="Email">
+                        <input class="input-group" type="text" placeholder="Phone Number">
+                        <select class="input-group" placeholder="Gender">
+                            <option>Gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                        <input class="input-group" type="text" placeholder="Occupation">
+                        <input class="input-group" type="text" placeholder="Address">
+                        <input class="input-group" type="password" placeholder="Password">
+                        <input class="input-group" type="password" placeholder="Confirm Password">
+                        <input class="signup-btn" type="submit" value="Join">
+                        <p class="text-center text4 text4a"><a href="login.html">Already joined? If yes, login</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="../public/scripts/login-signup.js"></script>
+    </body>
+</html>
