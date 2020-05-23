@@ -3,7 +3,7 @@
 
  #### Description
 
-MyHelpNg is a platform that aims to connect volunteers seeking to offer their skills/ecpertise and time with NGOs/charity organizations that needs those skills/services. 
+MyHelpNg is a platform that aims to connect volunteers seeking to offer their skills/expertise and time with NGOs/charity organizations that needs those skills/services. 
 
 We make it easy for nonprofits to clearly communicate their needs, and for people to give their time, skills or funds in the most effective way possible. By volunteering online, donating funds or even just hitting the “Share” button – supporting great causes can take many shapes and forms, and we’re here to make it all possible.
 
