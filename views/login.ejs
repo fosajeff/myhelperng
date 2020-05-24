@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Log in to your account</title>
+    <link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="../stylesheets/login-signup.css">
+</head>
+
+<body>
+    <div>
+        <div>
+            <img src="../images/logo.png" class="logo-login">
+        </div>
+        <div class="card-view-3">
+            <div class="">
+                <div class="for-md-screen fms-left">
+                    <h1 class="text-center text1">Login to your account</h1>
+                    <img src="../images/authentication.png" width="100%">
+                </div>
+                <div class="for-md-screen fms-right">
+                    <form method="POST" action="/login/<%= user %>">
+                        <input class="input-group marg1" type="text" placeholder="Email">
+                        <input class="input-group" type="password" placeholder="Password">
+                        <input class="login-btn" type="submit" value="Login">
+                        <p class="text-center text4 text5a"><a href="/join">Don't have an account? Create one</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../scripts/login-signup.js"></script>
+</body>
+
+</html>

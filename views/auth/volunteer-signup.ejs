@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign up to have an account</title>
+    <link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="../stylesheets/login-signup.css">
+</head>
+
+<body>
+    <div>
+        <img src="../images/logo.png" class="logo-login">
+    </div>
+    <div class="col-md-12" id="volunteer-signup-part">
+        <%- messages("message", locals) %>
+        <% if (errors) { %>
+        <% errors.forEach(error => { %>
+        <div style="width: 50%;" class="alert alert-danger text-center"><%= error.msg %></div>
+        <% }) %>
+        <% } %>
+        <div class="col-md-6">
+            <img src="../images/volunteer-login.png" class="ngo-signup-image signup-image">
+        </div>
+        <div class="col-md-6">
+            <div class="card-view">
+                <h1 class="text-center text1">Join MyHelper.ng as a Volunteer</h1>
+                <p class="text-center text2">Fill the form below to join as a Volunteer</p>
+                <form method="POST" action="/join/volunteer">
+                    <input class="input-group" name="name" type="text" placeholder="FULL NAME">
+                    <input class="input-group" name="email" type="text" placeholder="Email">
+                    <input class="input-group" name="contact" type="text" placeholder="Phone Number">
+                    <select class="input-group" name="gender" placeholder="Gender">
+                        <option>Gender</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                    </select>
+                    <input class="input-group" name="occupation" type="text" placeholder="Occupation">
+                    <input class="input-group" name="address" type="text" placeholder="Address">
+                    <input class="input-group" name="password" type="password" placeholder="Password">
+                    <input class="input-group" name="password2" type="password" placeholder="Confirm Password">
+                    <input class="signup-btn" type="submit" value="Join">
+                    <p class="text-center text4 text4a"><a href="/login/volunteer">Already joined? If yes, login</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
