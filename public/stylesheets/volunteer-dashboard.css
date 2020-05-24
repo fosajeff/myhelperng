@@ -136,6 +136,9 @@ input#search-bar{
     padding:10px 30px;
     display:block;
 }
+.settings-btn-2:focus, .settings-btn-2:focus{
+    outline:none
+}
 .side-menu-div:hover{
     cursor:pointer;
 }
