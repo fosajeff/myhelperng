@@ -84,7 +84,65 @@ exports.getVoluteerLogin = (req, res) => {
 
 // POST /login/volunteer
 exports.volunteerLogIn = async (req, res) => {
-  res.render("index");
+  const { email, password } = req.body;
+
+  req.checkBody("email", "Email is required").notEmpty();
+  req.checkBody("email", "Not a valid email").isEmail();
+  req.checkBody("password", "Password is required").notEmpty();
+
+  let errors = req.validationErrors();
+  if (errors) {
+    res.render("login", {
+      errors: errors,
+      user: "volunteer",
+    });
+  } else {
+    Volunteer.findOne({ email }, function (err, user) {
+      if (!user) {
+        let error = {
+          param: "email",
+          msg: "Invalid email or password, try again",
+          value: req.body.email,
+        };
+        if (!errors) {
+          errors = [];
+        }
+        errors.push(error);
+        return res.render("login", {
+          errors: errors,
+          user: "volunteer",
+        });
+      } else {
+        bcrypt
+          .compare(password, user.password)
+          .then((valid) => {
+            if (!valid) {
+              let error = {
+                param: "password",
+                msg: "Invalid email or password, try again",
+                value: req.body.password,
+              };
+              if (!errors) {
+                errors = [];
+              }
+              errors.push(error);
+              return res.render("login", {
+                errors: errors,
+                user: "volunteer",
+              });
+            } else {
+              req.flash("success", "Login successful");
+
+              // send to Volunteer dashboard
+              res.render("index");
+            }
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+      }
+    });
+  }
 };
 
 //  for NGo
