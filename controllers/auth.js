@@ -134,7 +134,12 @@ exports.volunteerLogIn = async (req, res) => {
               req.flash("success", "Login successful");
 
               // send to Volunteer dashboard
-              res.render("index");
+              res.render("volunteer-dashboard", {
+                name: user.name,
+                email: user.email,
+                contact: user.contact,
+                gender: user.gender,
+              });
             }
           })
           .catch((err) => {
@@ -268,7 +273,9 @@ exports.ngoLogIn = async (req, res) => {
               req.flash("success", "Login successful");
 
               // send to NGO dashboard
-              res.render("index");
+              res.render("ngo-dashboard", {
+                name: user.ngo_name,
+              });
             }
           })
           .catch((err) => {
