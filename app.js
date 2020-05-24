@@ -91,8 +91,4 @@ mongoose
   })
   .catch((err) => console.log("Connection to database failed =>", err));
 
-app.get("/", (req, res) => {
-  res.render("index");
-});
-
 module.exports = app;
