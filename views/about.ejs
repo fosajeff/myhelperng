@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<head>
+    <title>MyHelperNG</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/main.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/header-footer.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/bootstrap.min.css">
+    <script src="../scripts/main.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="toggle">
+            <div><img src="../images/logo.png" alt="logo" class="logo" /></div>
+            <ul class="navigation">
+                <li><a href="/join"><button class="header-btn">Register</button></a></li>
+                <li><a href="/login" class="text-header">Log In</a></li>
+                <li><a href="#contact" class="text-header">Contact Us</a></li>
+                <li><a href="/about" class="text-header">About Us</a></li>
+                <li><a href="/" class="text-header">Home</a></li>
+            </ul>
+            <span class="open-slide">
+                <a href="#" onclick="openSlideMenu()">
+                    <svg width="37" height="44" viewBox="0 0 50 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M24.7999 15.6047H42.7204C45.1404 15.6047 47.1199 13.8702 47.1199 11.7508C47.1199 9.63136 45.1404 7.89685 42.7204 7.89685H24.7999C22.3799 7.89685 20.4004 9.63136 20.4004 11.7508C20.4004 13.8702 22.3799 15.6047 24.7999 15.6047Z"
+                            fill="#170889" />
+                        <path
+                            d="M6.88 15.6047H11.4402C13.8597 15.6047 15.8397 13.8702 15.8397 11.7508C15.8397 9.63136 13.8597 7.89685 11.4402 7.89685H6.88C4.46001 7.89685 2.47998 9.63136 2.47998 11.7508C2.47998 13.8702 4.46001 15.6047 6.88 15.6047Z"
+                            fill="#170889" />
+                        <path
+                            d="M42.7205 38.7277H6.88C4.46001 38.7277 2.47998 40.4622 2.47998 42.5816C2.47998 44.701 4.46001 46.4355 6.88 46.4355H42.7205C45.1404 46.4355 47.12 44.701 47.12 42.5816C47.12 40.4622 45.1404 38.7277 42.7205 38.7277Z"
+                            fill="#170889" />
+                        <path
+                            d="M42.7205 23.312H6.88C4.46001 23.312 2.47998 25.0465 2.47998 27.1664C2.47998 29.2863 4.46001 31.0203 6.88 31.0203H42.7205C45.1404 31.0203 47.12 29.2858 47.12 27.1664C47.12 25.047 45.1404 23.312 42.7205 23.312Z"
+                            fill="#170889" />
+                    </svg>
+                </a>
+            </span>
+        </nav>
+        <div id="side-menu" class="side-nav">
+            <div><a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a></div>
+            <div>
+                <div class=""><a href="/" onclick="closeSlideMenu()">HOME</a></div>
+                <div class=""><a href="/about" onclick="closeSlideMenu()">ABOUT US</a></div>
+                <div class=""><a href="/login" onclick="closeSlideMenu()">Log In</a></div>
+                <div class=""><a href="/join" onclick="closeSlideMenu()"><button class="header-btn"
+                            style="width:50%;">Register</button></a></div>
+            </div>
+        </div>
+    </header>
+    <div class="">
+        <div class="container">
+            <div class="col-sm-6">
+                <h1 class="text2 text3">About Us</h1>
+                <p class="text2 text4">MyHelpNg is a platform that aims to connect volunteers seeking to offer their
+                    skills/expertise and time with NGOs/charity organizations that needs those skills/services.</p>
+                <p class="text2 text4">We make it easy for nonprofits to clearly communicate their needs, and for people
+                    to give their time, skills or funds in the most effective way possible. By volunteering online,
+                    donating funds or even just hitting the “Share” button – supporting great causes can take many
+                    shapes and forms, and we’re here to make it all possible.</p>
+                <p class="text2 text4">From research most NGO organisations lack sufficient man power and necessary
+                    resources to carry out thier goals and reach out to communities in need of help/relief. MyHelperNg
+                    aims to bridge the gap by providing a platform where these organisations can get help from
+                    volunteers willing to offer their skills and also get Donations from willing donors and
+                    philanthropists online.</p>
+            </div>
+            <div class="col-sm-6">
+                <img src="../images/about.png" class="img1" />
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+            <div class="">
+                <h1 class="text5 text10 text-center">WHO IS IT FOR?</h1>
+                <p class="text4 text-center">This platform is open to anyone passionate about making the world better.
+                </p>
+                <div class=" text-center">
+                    <div class="col-sm-4">
+                        <div class="size3 text5">
+                            <h3 class="text12">NGO's</h3>
+                            <p class="text13">This platform can be of help to NGO organizations seeking skills/services
+                                and donations to achieve the organizational goals.</p>
+                            <a href="/join/ngo"><button class="contact-btn2">Start</button></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="size3 text5">
+                            <h3 class="text12">Volunteers</h3>
+                            <p class="text13">This platform can also be of help to volunteers who want to offer their
+                                time and skills in service for free.</p>
+                            <a href="/join/volunteer"><button class="contact-btn2">Volunteer</button></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="size3 text5">
+                            <h3 class="text12">Philantropists</h3>
+                            <p class="text13"> The platform can also be a means to contribute to worthy NGOs for those
+                                seeking to make donations.</p>
+                            <a href="/join"><button class="contact-btn2">Donate</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a name="contact"></a>
+    <div class="bg1">
+        <div class="container">
+            <div class=" col-sm-6 col-md-3">
+                <h3 class="text2a">About MyHelperNG</h3>
+                <p class="text2a">MyHelpNg is a platform that aims to connect volunteers seeking to offer their
+                    skills/expertise and time with NGOs/charity organizations that needs those skills/services.</p>
+            </div>
+            <div class="col-sm-6 col-md-3 footer-links">
+                <a href="">
+                    <h3 class="text2a">Company</h3>
+                    <a href="/">
+                        <p class="text18">Home</p>
+                    </a>
+                    <a href="/about">
+                        <p class="text18">About Us</p>
+                    </a>
+                    <a href="">
+                        <p class="text18">Mail us</p>
+                    </a>
+            </div>
+            <div class="col-sm-6 col-md-3 footer-links">
+                <h3 class="text2a">Quick Links</h3>
+                <a href="/join/volunteer">
+                    <p class="text18">Sign up as volunteer</p>
+                </a>
+                <a href="/join/ngo">
+                    <p class="text18">Sign up as NGO</p>
+                </a>
+                <a href="/join">
+                    <p class="text18">Donate</p>
+                </a>
+                <a href="/login">
+                    <p class="text18">Log in</p>
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <h3 class="text2a">Contact</h3>
+                <p>
+                    <!-- social links -->
+                    <a href="">
+                        <!-- facebook -->
+                        <svg width="30" height="30" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M5.44822 0C2.43921 0 0 2.27789 0 5.08789C0 7.89789 2.43921 10.1758 5.44822 10.1758C8.45723 10.1758 10.8964 7.89789 10.8964 5.08789C10.8964 2.27789 8.45723 0 5.44822 0ZM6.73877 3.51594H5.91983C5.82279 3.51594 5.71496 3.63519 5.71496 3.79366V4.34591H6.73934L6.5844 5.13347H5.71496V7.49775H4.74846V5.13347H3.87164V4.34591H4.74846V3.8827C4.74846 3.21809 5.24221 2.67803 5.91983 2.67803H6.73877V3.51594Z"
+                                fill="#F4F8FC" />
+                        </svg>
+                    </a>
+                    <a href="">
+                        <!-- twitter -->
+                        <svg width="30" height="30" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M5.98069 0.175781C2.97201 0.175781 0.532471 2.45402 0.532471 5.26376C0.532471 8.07351 2.97201 10.3517 5.98069 10.3517C8.98937 10.3517 11.4289 8.07351 11.4289 5.26376C11.4289 2.45402 8.98937 0.175781 5.98069 0.175781ZM8.599 4.01108C8.60265 4.06445 8.60265 4.1201 8.60265 4.17462C8.60265 5.84184 7.24302 7.76233 4.75849 7.76233C3.99233 7.76233 3.28212 7.55449 2.68379 7.19674C2.79324 7.2081 2.89783 7.21264 3.00971 7.21264C3.64209 7.21264 4.2234 7.01276 4.68674 6.67432C4.09327 6.66296 3.59466 6.29953 3.42441 5.79982C3.63236 5.82821 3.81964 5.82821 4.03368 5.77711C3.7281 5.71913 3.45344 5.56414 3.25636 5.33848C3.05927 5.11281 2.95193 4.83039 2.95255 4.53918V4.52328C3.13132 4.61755 3.34171 4.67547 3.56183 4.68342C3.37679 4.56825 3.22503 4.41222 3.12002 4.22917C3.01502 4.04611 2.96 3.84169 2.95985 3.63402C2.95985 3.39893 3.02552 3.18428 3.14348 2.99802C3.48266 3.38795 3.9059 3.70687 4.38571 3.93404C4.86551 4.1612 5.39113 4.29154 5.9284 4.31658C5.73747 3.45912 6.42336 2.7652 7.24789 2.7652C7.63705 2.7652 7.98729 2.91739 8.23416 3.1627C8.53941 3.10932 8.83128 3.00256 9.09153 2.85947C8.99059 3.15134 8.77898 3.39779 8.49806 3.55338C8.77047 3.52613 9.03315 3.45571 9.27638 3.35691C9.09274 3.60903 8.8629 3.83277 8.599 4.01108Z"
+                                fill="#F4F8FC" />
+                        </svg>
+                    </a>
+                    <a href="">
+                        <!-- instagram -->
+                        <svg width="30" height="30" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M5.51316 4.00195C5.24593 4.00195 4.98469 4.07595 4.7625 4.2146C4.5403 4.35325 4.36712 4.55032 4.26485 4.78089C4.16259 5.01146 4.13583 5.26516 4.18797 5.50993C4.2401 5.7547 4.36879 5.97954 4.55775 6.15601C4.74671 6.33248 4.98746 6.45265 5.24956 6.50134C5.51166 6.55003 5.78334 6.52504 6.03023 6.42953C6.27712 6.33403 6.48814 6.1723 6.63661 5.96479C6.78508 5.75729 6.86432 5.51333 6.86432 5.26376C6.86432 5.09806 6.82937 4.93398 6.76147 4.78089C6.69357 4.6278 6.59404 4.48869 6.46858 4.37152C6.34311 4.25435 6.19416 4.16141 6.03023 4.098C5.8663 4.03458 5.6906 4.00195 5.51316 4.00195ZM10.9232 2.75539C10.9204 2.36247 10.8429 1.97315 10.6944 1.6055C10.5851 1.33648 10.4159 1.09217 10.198 0.888702C9.98011 0.685229 9.7185 0.527217 9.43043 0.425092C9.03676 0.286426 8.61987 0.214074 8.19913 0.211397C7.49631 0.175781 7.28928 0.175781 5.51316 0.175781C3.73704 0.175781 3.53001 0.175781 2.82719 0.211397C2.40645 0.214074 1.98956 0.286426 1.59589 0.425092C1.30782 0.527217 1.04622 0.685229 0.828338 0.888702C0.610459 1.09217 0.44126 1.33648 0.331904 1.6055C0.18342 1.97315 0.105945 2.36247 0.103079 2.75539C0.0649414 3.41174 0.0649414 3.60508 0.0649414 5.26376C0.0649414 6.92245 0.0649414 7.11579 0.103079 7.77214C0.108943 8.16644 0.186314 8.55696 0.331904 8.92711C0.440775 9.19491 0.609834 9.4378 0.827692 9.63943C1.04464 9.84412 1.3068 10.0021 1.59589 10.1024C1.98956 10.2411 2.40645 10.3135 2.82719 10.3161C3.53001 10.3517 3.73704 10.3517 5.51316 10.3517C7.28928 10.3517 7.49631 10.3517 8.19913 10.3161C8.61987 10.3135 9.03676 10.2411 9.43043 10.1024C9.71952 10.0021 9.98169 9.84412 10.1986 9.63943C10.4165 9.4378 10.5855 9.19491 10.6944 8.92711C10.8428 8.55767 10.9202 8.1667 10.9232 7.77214C10.9614 7.11579 10.9614 6.92245 10.9614 5.26376C10.9614 3.60508 10.9614 3.41174 10.9232 2.75539ZM9.5394 6.82578C9.52191 7.13976 9.45016 7.44903 9.32692 7.74161C9.22115 7.98568 9.06391 8.20739 8.86455 8.39356C8.6652 8.57974 8.42779 8.72658 8.16645 8.82535C7.85018 8.93403 7.51716 8.99417 7.18032 9.00343H3.84601C3.50916 8.99417 3.17614 8.93403 2.85988 8.82535C2.5897 8.73159 2.34572 8.58201 2.14616 8.38779C1.94875 8.20526 1.7963 7.98475 1.69941 7.74161C1.58257 7.44657 1.51995 7.13521 1.51417 6.82069V5.26376V3.70684C1.51995 3.39232 1.58257 3.08096 1.69941 2.78592C1.79981 2.53361 1.95998 2.30575 2.16795 2.11939C2.36427 1.93603 2.60014 1.79381 2.85988 1.70218C3.17614 1.5935 3.50916 1.53336 3.84601 1.5241H7.18032C7.51716 1.53336 7.85018 1.5935 8.16645 1.70218C8.43662 1.79594 8.68061 1.94552 8.88016 2.13974C9.07757 2.32227 9.23002 2.54278 9.32692 2.78592C9.44329 3.08127 9.50768 3.39227 9.5176 3.70684V5.26376C9.5176 6.31189 9.55574 6.41874 9.5394 6.82069V6.82578ZM8.66768 3.04032C8.60281 2.87597 8.50054 2.72671 8.36791 2.60286C8.23529 2.479 8.07547 2.38349 7.89948 2.32291C7.65784 2.24469 7.40334 2.2068 7.14763 2.21097H3.8787C3.62169 2.21332 3.36715 2.25811 3.12684 2.34326C2.95355 2.40109 2.79542 2.4927 2.66297 2.61201C2.53052 2.73132 2.42678 2.87559 2.35864 3.03523C2.27952 3.26183 2.24087 3.49905 2.24423 3.73737V6.79016C2.24963 7.0299 2.2975 7.26716 2.38588 7.4923C2.45075 7.65665 2.55303 7.8059 2.68565 7.92976C2.81828 8.05362 2.9781 8.14913 3.15408 8.20971C3.38654 8.28955 3.63116 8.3342 3.8787 8.34199H7.14763C7.40464 8.33965 7.65918 8.29486 7.89948 8.20971C8.07547 8.14913 8.23529 8.05362 8.36791 7.92976C8.50054 7.8059 8.60281 7.65665 8.66768 7.4923C8.75887 7.26789 8.80682 7.03018 8.80933 6.79016V5.26376V3.73737C8.80949 3.49711 8.76145 3.25896 8.66768 3.03523V3.04032ZM5.51316 7.20737C5.24011 7.20738 4.96974 7.15707 4.71754 7.05933C4.46534 6.96159 4.23626 6.81834 4.04344 6.6378C3.85062 6.45725 3.69783 6.24295 3.59383 6.00717C3.48984 5.77139 3.43667 5.51876 3.43739 5.26376C3.43739 4.87914 3.55959 4.50316 3.78852 4.18343C4.01745 3.86369 4.34281 3.61458 4.72342 3.46762C5.10404 3.32067 5.52278 3.28247 5.92664 3.35788C6.33051 3.43329 6.70134 3.61891 6.99218 3.89123C7.28303 4.16356 7.48081 4.51036 7.5605 4.88771C7.64019 5.26507 7.5982 5.65603 7.43984 6.01108C7.28148 6.36614 7.01388 6.66934 6.67091 6.88229C6.32794 7.09525 5.92502 7.20838 5.51316 7.20737ZM7.69245 3.70175C7.57201 3.68985 7.46056 3.63674 7.37955 3.55266C7.29854 3.46858 7.25372 3.35948 7.25372 3.24638C7.25372 3.13328 7.29854 3.02418 7.37955 2.9401C7.46056 2.85602 7.57201 2.80291 7.69245 2.791C7.81289 2.80291 7.92435 2.85602 8.00535 2.9401C8.08636 3.02418 8.13118 3.13328 8.13118 3.24638C8.13118 3.35948 8.08636 3.46858 8.00535 3.55266C7.92435 3.63674 7.81289 3.68985 7.69245 3.70175Z"
+                                fill="#F4F8FC" />
+                        </svg>
+                    </a>
+                </p>
+                <p class="text18">support@myhelper.ng</p>
+                <p class="text18">+2348123456789</p>
+                <p class="text18"> Suite C201, Plot 1245 Adetokunbo Ademola Crescent,Wuse 2, Abuja, FCT</p>
+            </div>
+        </div>
+        <hr class="hr1">
+        <div class="container">
+            <p class=" text2a text-center">By using this website, you accept our Terms of Use and Privacy Policy and
+                acknowledge receipt of all disclosures in our Disclosure Library . All agreements are available in our
+                Agreement Library. M1 relies on information from various sources believed to be reliable, including
+                clients and third parties, but cannot guarantee the accurac</p>
+        </div>
+    </div>
+</body>
