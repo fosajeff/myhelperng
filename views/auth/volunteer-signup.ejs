@@ -18,7 +18,9 @@
         <%- messages("message", locals) %>
         <% if (errors) { %>
         <% errors.forEach(error => { %>
-        <div style="width: 50%;" class="alert alert-danger text-center"><%= error.msg %></div>
+        <center>
+            <div style="width: 50%;" class="alert alert-danger text-center"><%= error.msg %></div>
+        </center>
         <% }) %>
         <% } %>
         <div class="col-md-6">
@@ -29,7 +31,7 @@
                 <h1 class="text-center text1">Join MyHelper.ng as a Volunteer</h1>
                 <p class="text-center text2">Fill the form below to join as a Volunteer</p>
                 <form method="POST" action="/join/volunteer">
-                    <input class="input-group" name="name" type="text" placeholder="FULL NAME">
+                    <input class="input-group" name="name" type="text" placeholder="Full Name">
                     <input class="input-group" name="email" type="text" placeholder="Email">
                     <input class="input-group" name="contact" type="text" placeholder="Phone Number">
                     <select class="input-group" name="gender" placeholder="Gender">
