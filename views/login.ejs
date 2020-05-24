@@ -15,6 +15,14 @@
         <div>
             <img src="../images/logo.png" class="logo-login">
         </div>
+        <%- messages("message", locals) %>
+        <% if (errors) { %>
+        <% errors.forEach(error => { %>
+        <center>
+            <div style="width: 50%;" class="alert alert-danger text-center"><%= error.msg %></div>
+        </center>
+        <% }) %>
+        <% } %>
         <div class="card-view-3">
             <div class="">
                 <div class="for-md-screen fms-left">
@@ -23,8 +31,8 @@
                 </div>
                 <div class="for-md-screen fms-right">
                     <form method="POST" action="/login/<%= user %>">
-                        <input class="input-group marg1" type="text" placeholder="Email">
-                        <input class="input-group" type="password" placeholder="Password">
+                        <input class="input-group marg1" name="email" type="text" placeholder="Email">
+                        <input class="input-group" name="password" type="password" placeholder="Password">
                         <input class="login-btn" type="submit" value="Login">
                         <p class="text-center text4 text5a"><a href="/join">Don't have an account? Create one</a>
                         </p>

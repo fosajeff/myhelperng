@@ -79,7 +79,7 @@ exports.volunteerSignUp = (req, res) => {
 
 // GET /login/volunteer
 exports.getVoluteerLogin = (req, res) => {
-  res.render("login", { user: "volunteer" });
+  res.render("login", { user: "volunteer", errors: null });
 };
 
 // POST /login/volunteer
@@ -87,7 +87,7 @@ exports.volunteerLogIn = async (req, res) => {
   res.render("index");
 };
 
-// NGo
+//  for NGo
 
 exports.getNgoSignUp = (req, res) => {
   res.render("auth/ngo-signup", { errors: null });
@@ -155,10 +155,68 @@ exports.ngoSignUp = (req, res) => {
 
 // GET /login/ngo
 exports.getNgoLogin = (req, res) => {
-  res.render("login", { user: "ngo" });
+  res.render("login", { user: "ngo", errors: null });
 };
 
 // POST /login/ngo
 exports.ngoLogIn = async (req, res) => {
-  res.render("index");
+  const { email, password } = req.body;
+
+  req.checkBody("email", "Email is required").notEmpty();
+  req.checkBody("email", "Not a valid email").isEmail();
+  req.checkBody("password", "Password is required").notEmpty();
+
+  let errors = req.validationErrors();
+  if (errors) {
+    res.render("login", {
+      errors: errors,
+      user: "ngo",
+    });
+  } else {
+    Ngo.findOne({ email }, function (err, user) {
+      if (!user) {
+        let error = {
+          param: "email",
+          msg: "Invalid email or password, try again",
+          value: req.body.email,
+        };
+        if (!errors) {
+          errors = [];
+        }
+        errors.push(error);
+        return res.render("login", {
+          errors: errors,
+          user: "ngo",
+        });
+      } else {
+        bcrypt
+          .compare(password, user.password)
+          .then((valid) => {
+            if (!valid) {
+              let error = {
+                param: "password",
+                msg: "Invalid email or password, try again",
+                value: req.body.password,
+              };
+              if (!errors) {
+                errors = [];
+              }
+              errors.push(error);
+              return res.render("login", {
+                errors: errors,
+                user: "ngo",
+              });
+            } else {
+              req.flash("success", "Login successful");
+
+              // send to NGO dashboard
+              res.render("index");
+            }
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+      }
+    });
+  }
 };
