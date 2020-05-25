@@ -1,0 +1,48 @@
+<header>
+    <nav class="toggle">
+        <a style="float:none" href="/">
+            <img src="../images/logo.png" alt="logo" class="logo" />
+        </a>
+        <ul class="navigation">
+            <% if (locals.user === null) { %>
+            <li><a href="/join"><button class="header-btn">Join</button></a></li>
+            <li><a href="/login" class="text-header">Log In</a></li>
+            <% } else { %>
+            <li><a href="#" class="text-header">My Account</a></li>
+            <li><a href="/logout" class="text-header">Log Out</a></li>
+            <% } %>
+
+            <li><a href="/#contact" class="text-header">Contact Us</a></li>
+            <li><a href="/about" class="text-header">About Us</a></li>
+            <li><a href="/" class="text-header">Home</a></li>
+        </ul>
+        <span class="open-slide">
+            <a href="#" onclick="openSlideMenu()">
+                <svg width="37" height="44" viewBox="0 0 50 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M24.7999 15.6047H42.7204C45.1404 15.6047 47.1199 13.8702 47.1199 11.7508C47.1199 9.63136 45.1404 7.89685 42.7204 7.89685H24.7999C22.3799 7.89685 20.4004 9.63136 20.4004 11.7508C20.4004 13.8702 22.3799 15.6047 24.7999 15.6047Z"
+                        fill="#170889" />
+                    <path
+                        d="M6.88 15.6047H11.4402C13.8597 15.6047 15.8397 13.8702 15.8397 11.7508C15.8397 9.63136 13.8597 7.89685 11.4402 7.89685H6.88C4.46001 7.89685 2.47998 9.63136 2.47998 11.7508C2.47998 13.8702 4.46001 15.6047 6.88 15.6047Z"
+                        fill="#170889" />
+                    <path
+                        d="M42.7205 38.7277H6.88C4.46001 38.7277 2.47998 40.4622 2.47998 42.5816C2.47998 44.701 4.46001 46.4355 6.88 46.4355H42.7205C45.1404 46.4355 47.12 44.701 47.12 42.5816C47.12 40.4622 45.1404 38.7277 42.7205 38.7277Z"
+                        fill="#170889" />
+                    <path
+                        d="M42.7205 23.312H6.88C4.46001 23.312 2.47998 25.0465 2.47998 27.1664C2.47998 29.2863 4.46001 31.0203 6.88 31.0203H42.7205C45.1404 31.0203 47.12 29.2858 47.12 27.1664C47.12 25.047 45.1404 23.312 42.7205 23.312Z"
+                        fill="#170889" />
+                </svg>
+            </a>
+        </span>
+    </nav>
+    <div id="side-menu" class="side-nav">
+        <div><a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a></div>
+        <div>
+            <div class=""><a href="/" onclick="closeSlideMenu()">HOME</a></div>
+            <div class=""><a href="/about" onclick="closeSlideMenu()">ABOUT US</a></div>
+            <div class=""><a href="/login" onclick="closeSlideMenu()">Log In</a></div>
+            <div class=""><a href="/join" onclick="closeSlideMenu()"><button class="header-btn"
+                        style="width:50%;">Register</button></a></div>
+        </div>
+    </div>
+</header>

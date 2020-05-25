@@ -1,7 +1,7 @@
 // const createError = require("http-errors");
-// const cookieParser = require("cookie-parser");
+const cookieParser = require("cookie-parser");
 // const logger = require("morgan");
-const dotenv = require('dotenv').config();
+const dotenv = require("dotenv").config();
 const express = require("express");
 const app = express();
 const path = require("path");
@@ -17,7 +17,7 @@ app.set("view engine", "ejs");
 // app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-// app.use(cookieParser());
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Express Session Middleware
@@ -82,11 +82,17 @@ app.use(authRouter);
 //   res.render('error');
 // });
 
+const PORT = process.env.PORT || 5000;
+
 mongoose
-  .connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
+  .connect(url, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+  })
   .then((db) => {
     console.log("Database connected successfully");
-    // app.listen(5000, () => console.log("***Server running on PORT 5000***"));
+    app.listen(PORT, () => console.log(`***Server running on PORT ${PORT}***`));
   })
   .catch((err) => console.log("Connection to database failed =>", err));
 
