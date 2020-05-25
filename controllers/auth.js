@@ -4,6 +4,7 @@ const Volunteer = require("../models/volunteers");
 const Ngo = require("../models/ngo");
 
 exports.getVolunteerSignUp = (req, res) => {
+  res.locals.title = "Volunteer Join | MyHelperNg";
   res.render("auth/volunteer-signup", { errors: null });
 };
 
@@ -32,6 +33,7 @@ exports.volunteerSignUp = (req, res) => {
 
   let errors = req.validationErrors();
   if (errors) {
+    res.locals.title = "Volunteer Join | MyHelperNg";
     res.render("auth/volunteer-signup", {
       errors: errors,
     });
@@ -47,6 +49,7 @@ exports.volunteerSignUp = (req, res) => {
           errors = [];
         }
         errors.push(error);
+        res.locals.title = "Volunteer Join | MyHelperNg";
         res.render("auth/volunteer-signup", {
           errors: errors,
         });
@@ -79,6 +82,7 @@ exports.volunteerSignUp = (req, res) => {
 
 // GET /login/volunteer
 exports.getVoluteerLogin = (req, res) => {
+  res.locals.title = "Volunteer Login | MyHelperNg";
   res.render("login", { user: "volunteer", errors: null });
 };
 
@@ -92,6 +96,7 @@ exports.volunteerLogIn = async (req, res) => {
 
   let errors = req.validationErrors();
   if (errors) {
+    res.locals.title = "Volunteer Login | MyHelperNg";
     res.render("login", {
       errors: errors,
       user: "volunteer",
@@ -108,6 +113,7 @@ exports.volunteerLogIn = async (req, res) => {
           errors = [];
         }
         errors.push(error);
+        res.locals.title = "Volunteer Login | MyHelperNg";
         return res.render("login", {
           errors: errors,
           user: "volunteer",
@@ -126,6 +132,7 @@ exports.volunteerLogIn = async (req, res) => {
                 errors = [];
               }
               errors.push(error);
+              res.locals.title = "Volunteer Login | MyHelperNg";
               return res.render("login", {
                 errors: errors,
                 user: "volunteer",
@@ -135,6 +142,7 @@ exports.volunteerLogIn = async (req, res) => {
 
               // send to Volunteer dashboard
               res.render("volunteer-dashboard", {
+                title: `Dashboard | ${user.name}`,
                 name: user.name,
                 email: user.email,
                 contact: user.contact,
@@ -153,6 +161,7 @@ exports.volunteerLogIn = async (req, res) => {
 //  for NGo
 
 exports.getNgoSignUp = (req, res) => {
+  res.locals.title = "NGO Join | MyHelperNg";
   res.render("auth/ngo-signup", { errors: null });
 };
 
@@ -172,6 +181,7 @@ exports.ngoSignUp = (req, res) => {
 
   let errors = req.validationErrors();
   if (errors) {
+    res.locals.title = "NGO Join | MyHelperNg";
     res.render("auth/ngo-signup", {
       errors: errors,
     });
@@ -187,6 +197,7 @@ exports.ngoSignUp = (req, res) => {
           errors = [];
         }
         errors.push(error);
+        res.locals.title = "NGO Join | MyHelperNg";
         res.render("auth/ngo-signup", {
           errors: errors,
         });
@@ -218,6 +229,7 @@ exports.ngoSignUp = (req, res) => {
 
 // GET /login/ngo
 exports.getNgoLogin = (req, res) => {
+  res.locals.title = "NGO Login | MyHelperNg";
   res.render("login", { user: "ngo", errors: null });
 };
 
@@ -231,6 +243,7 @@ exports.ngoLogIn = async (req, res) => {
 
   let errors = req.validationErrors();
   if (errors) {
+    res.locals.title = "NGO Login | MyHelperNg";
     res.render("login", {
       errors: errors,
       user: "ngo",
@@ -247,6 +260,7 @@ exports.ngoLogIn = async (req, res) => {
           errors = [];
         }
         errors.push(error);
+        res.locals.title = "NGO Login | MyHelperNg";
         return res.render("login", {
           errors: errors,
           user: "ngo",
@@ -265,6 +279,7 @@ exports.ngoLogIn = async (req, res) => {
                 errors = [];
               }
               errors.push(error);
+              res.locals.title = "NGO Login | MyHelperNg";
               return res.render("login", {
                 errors: errors,
                 user: "ngo",
@@ -274,6 +289,7 @@ exports.ngoLogIn = async (req, res) => {
 
               // send to NGO dashboard
               res.render("ngo-dashboard", {
+                title: `Dashboard | ${user.ngo_name}`,
                 name: user.ngo_name,
               });
             }

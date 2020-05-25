@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Volunteer Dashboard</title>
+    <title><% title %></title>
+    <link rel="icon" href="../images/favicon.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="../stylesheets/header-footer.css">
     <link rel="stylesheet" href="../stylesheets/volunteer-dashboard.css">
+    <script src="../public/scripts/main.js"></script>
 </head>
 
 <body>
@@ -581,7 +584,10 @@
             </div>
         </div>
     </div>
+    <div class="container"></div>
+    <%- include('partials/footer') %>
     <script src="../scripts/volunteer-dashboard.js"></script>
 </body>
+
 
 </html>
