@@ -1,7 +1,7 @@
 // const createError = require("http-errors");
 // const cookieParser = require("cookie-parser");
 // const logger = require("morgan");
-
+const dotenv = require('dotenv').config();
 const express = require("express");
 const app = express();
 const path = require("path");
@@ -9,7 +9,7 @@ const mongoose = require("mongoose");
 const expressValidator = require("express-validator");
 const flash = require("connect-flash");
 const session = require("express-session");
-
+const url = process.env.MONGODB_URI;
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -82,12 +82,11 @@ app.use(authRouter);
 //   res.render('error');
 // });
 
-const url = "mongodb://localhost:27017/myHelperNg";
 mongoose
-  .connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
   .then((db) => {
     console.log("Database connected successfully");
-    app.listen(5000, () => console.log("***Server running on PORT 5000***"));
+    // app.listen(5000, () => console.log("***Server running on PORT 5000***"));
   })
   .catch((err) => console.log("Connection to database failed =>", err));
 
