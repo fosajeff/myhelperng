@@ -123,7 +123,7 @@ textarea{
 /*media queries*/
 @media(min-width:200px){
     .card-view{margin:30px 15px 30px;}
-    .card-view-3{width:300px; height:350px; margin:30px auto; }
+    .card-view-3{width:300px; height:350px; margin:30px auto 280px; }
     .checkbox-div{width:90%; display:block; margin:auto}
     .fms-left{float:left;}
     .fms-right{float:right; background:#170887; width:300px; padding:30px 0 30px; margin-bottom: 30px;}
@@ -134,7 +134,7 @@ textarea{
     .text5{ font-size:1.8em}
 }
 @media(min-width:560px){
-    .card-view-3{width:400px; height:350px; margin:40px auto; }
+    .card-view-3{width:400px; height:350px; margin:40px auto 350px; }
     .fms-left{float:left;}
     .fms-right{float:right; background:#170887; width:400px; padding:30px 0 30px; margin-bottom: 30px;}
     .input-group{margin:30px auto; width:90%;}
@@ -145,7 +145,7 @@ textarea{
 @media(min-width:768px){
     .card-view{margin:30px auto 30px; display:block; width:500px;}
     .card-view-2{min-height:470px}
-    .card-view-3{width:400px; height:350px; margin:50px auto; }
+    .card-view-3{width:400px; height:350px; margin:50px auto 400px; }
     .checkbox-div{width:80%; display:block; margin:auto}
     .fms-left{float:left;}
     .fms-right{float:right; background:#170887; width:400px; padding:30px 0 30px; margin-bottom: 30px;}
