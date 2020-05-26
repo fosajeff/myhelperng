@@ -26,6 +26,16 @@ router.get("/login", (req, res) => {
 router.get("/join/volunteer", getVolunteerSignUp);
 // volunteer signup
 router.post("/join/volunteer", volunteerSignUp);
+// GET volunteer dashboard
+router.get("/user/dashboard", (req, res) => {
+  res.locals.title = `Dashboard | ${req.user.name}`;
+  res.render("volunteer-dashboard", {
+    name: req.user.name,
+    email: req.user.email,
+    contact: req.user.contact,
+    gender: req.user.gender,
+  });
+});
 
 // volunteer login
 router.route("/login/volunteer").get(getVoluteerLogin).post(volunteerLogIn);
@@ -34,30 +44,21 @@ router.route("/login/volunteer").get(getVoluteerLogin).post(volunteerLogIn);
 router.get("/join/ngo", getNgoSignUp);
 // ngo signup
 router.post("/join/ngo", ngoSignUp);
-
 // ngo login
 router.route("/login/ngo").get(getNgoLogin).post(ngoLogIn);
+// GET ngo dashboard
+router.get("/org/dashboard", (req, res) => {
+  res.locals.title = `Dashboard | ${req.user.ngo_name}`;
+  res.render("ngo-dashboard", {
+    name: req.user.ngo_name,
+  });
+});
 
-// GET /logout
-// router.get("/logout", function (req, res, next) {
-//   if (req.session) {
-//     // delete session object
-//     req.session.destroy(function (err) {
-//       if (err) {
-//         return next(err);
-//       } else {
-//         return res.redirect("/");
-//       }
-//     });
-//   }
-// });
+// logout
 
 router.get("/logout", (req, res) => {
-  if (req.session.user && req.cookies.user_sid) {
-    res.clearCookie("user_sid");
-    res.redirect("/");
-  } else {
-    res.redirect("/login");
-  }
+  req.logOut();
+  req.flash("success", "Logout successful");
+  res.redirect("/login");
 });
 module.exports = router;

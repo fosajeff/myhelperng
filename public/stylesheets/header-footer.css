@@ -2,7 +2,7 @@
     float: left;
     margin-left: 50px;
     margin-top: 20px;
-    width: 140px;
+    width: 160px;
     height: 50px;
 }
 
@@ -11,7 +11,7 @@
         display: block;
         margin-left: 20px;
         margin-right: auto;
-        width: 110px;
+        width: 140px;
         height: 50px;
     }
 }
