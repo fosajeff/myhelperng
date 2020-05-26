@@ -94,7 +94,7 @@ app.use(authRouter);
 //   res.render('error');
 // });
 
-const PORT = process.env.PORT || 5000;
+// const PORT = process.env.PORT || 5000;
 
 mongoose
   .connect(config.database, {
@@ -104,7 +104,7 @@ mongoose
   })
   .then((db) => {
     console.log("Database connected successfully");
-    app.listen(PORT, () => console.log(`***Server running on PORT ${PORT}***`));
+    // app.listen(PORT, () => console.log(`***Server running on PORT ${PORT}***`));
   })
   .catch((err) => console.log("Connection to database failed =>", err));
 
