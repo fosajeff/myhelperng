@@ -8,6 +8,7 @@ const {
   ngoSignUp,
   getNgoLogin,
   ngoLogIn,
+  updateVolunteerProfile,
 } = require("../controllers/auth");
 
 // GET intro page
@@ -28,17 +29,19 @@ router.get("/join/volunteer", getVolunteerSignUp);
 router.post("/join/volunteer", volunteerSignUp);
 // GET volunteer dashboard
 router.get("/user/dashboard", (req, res) => {
-  res.locals.title = `Dashboard | ${req.user.name}`;
-  res.render("volunteer-dashboard", {
-    name: req.user.name,
-    email: req.user.email,
-    contact: req.user.contact,
-    gender: req.user.gender,
-  });
+  if (typeof req.user !== "undefined") {
+    res.locals.title = `Dashboard | ${req.user.name}`;
+    res.render("volunteer-dashboard");
+  } else {
+    res.redirect("/login");
+  }
 });
 
 // volunteer login
 router.route("/login/volunteer").get(getVoluteerLogin).post(volunteerLogIn);
+
+// update volunteer dashboard
+router.post("/user/dashboard/update", updateVolunteerProfile);
 
 // GET ngo signup
 router.get("/join/ngo", getNgoSignUp);
@@ -48,10 +51,14 @@ router.post("/join/ngo", ngoSignUp);
 router.route("/login/ngo").get(getNgoLogin).post(ngoLogIn);
 // GET ngo dashboard
 router.get("/org/dashboard", (req, res) => {
-  res.locals.title = `Dashboard | ${req.user.ngo_name}`;
-  res.render("ngo-dashboard", {
-    name: req.user.ngo_name,
-  });
+  if (typeof req.user !== "undefined") {
+    res.locals.title = `Dashboard | ${req.user.ngo_name}`;
+    res.render("ngo-dashboard", {
+      name: req.user.ngo_name,
+    });
+  } else {
+    res.redirect("/login");
+  }
 });
 
 // logout
