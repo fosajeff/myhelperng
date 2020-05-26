@@ -4,11 +4,19 @@
             <img src="../images/logo.png" alt="logo" class="logo" />
         </a>
         <ul class="navigation">
-            <% if (locals.user === null) { %>
-            <li><a href="/join"><button class="header-btn hvr-pulse">Join</button></a></li>
+            <% if (!user) { %>
+            <li><a href="/join"><button class="header-btn">Join</button></a></li>
             <li><a href="/login" class="text-header">Log In</a></li>
             <% } else { %>
+
+            <% if (user.name) { %>
+            <li><a href="user/dashboard" class="text-header">My Account</a></li>
+            <% } else if (user.ngo_name) { %>
+            <li><a href="org/dashboard" class="text-header">My Account</a></li>
+            <% } else { %>
             <li><a href="#" class="text-header">My Account</a></li>
+            <% } %>
+
             <li><a href="/logout" class="text-header">Log Out</a></li>
             <% } %>
 

@@ -2,15 +2,12 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign up to have an account</title>
-    <link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
     <link rel="stylesheet" href="../stylesheets/login-signup.css">
 </head>
+<%- include('../partials/meta-data') %>
 
 <body>
+    <%- include('../partials/nav') %>
     <div>
         <img src="../images/logo.png" class="logo-login">
     </div>
@@ -19,7 +16,7 @@
         <% if (errors) { %>
         <% errors.forEach(error => { %>
         <center>
-            <div style="width: 50%;" class="alert alert-danger text-center"><%= error.msg %></div>
+            <div style="width: 80%;" class="alert alert-danger text-center"><%= error.msg %></div>
         </center>
         <% }) %>
         <% } %>
@@ -50,4 +47,6 @@
             </div>
         </div>
     </div>
+    <div class="container"></div>
+    <%- include('../partials/footer') %>
 </body>
