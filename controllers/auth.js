@@ -110,25 +110,20 @@ exports.updateVolunteerProfile = (req, res) => {
   const volunteer = Volunteer.updateOne(
     { email: req.user.email },
     {
-      name,
-      state,
-      address,
-      contact,
-      gender: gender,
-      dob,
-      about,
-      experience,
-      url,
+      $set: {
+        name,
+        state,
+        address,
+        contact,
+        gender: gender,
+        dob,
+        about,
+        experience,
+        url,
+      },
     }
   )
     .then(() => {
-<<<<<<< HEAD
-      volunteer.save();
-    })
-    .then((res) => {
-=======
-      req.flash("success", "Update successful");
->>>>>>> 783a5b308d66406e18c7e80e2bc48d6b43f71009
       res.redirect("/user/dashboard");
     })
     .catch((err) => console.error(err));
@@ -217,66 +212,4 @@ exports.ngoLogIn = async (req, res, next) => {
     failureRedirect: "/login/ngo",
     failureFlash: true,
   })(req, res, next);
-  // const { email, password } = req.body;
-  // req.checkBody("email", "Email is required").notEmpty();
-  // req.checkBody("email", "Not a valid email").isEmail();
-  // req.checkBody("password", "Password is required").notEmpty();
-  // let errors = req.validationErrors();
-  // if (errors) {
-  //   res.locals.title = "NGO Login | MyHelperNg";
-  //   res.render("login", {
-  //     errors: errors,
-  //     user: "ngo",
-  //   });
-  // } else {
-  //   Ngo.findOne({ email }, function (err, user) {
-  //     if (!user) {
-  //       let error = {
-  //         param: "email",
-  //         msg: "Invalid email or password, try again",
-  //         value: req.body.email,
-  //       };
-  //       if (!errors) {
-  //         errors = [];
-  //       }
-  //       errors.push(error);
-  //       res.locals.title = "NGO Login | MyHelperNg";
-  //       return res.render("login", {
-  //         errors: errors,
-  //         user: "ngo",
-  //       });
-  //     } else {
-  //       bcrypt
-  //         .compare(password, user.password)
-  //         .then((valid) => {
-  //           if (!valid) {
-  //             let error = {
-  //               param: "password",
-  //               msg: "Invalid email or password, try again",
-  //               value: req.body.password,
-  //             };
-  //             if (!errors) {
-  //               errors = [];
-  //             }
-  //             errors.push(error);
-  //             res.locals.title = "NGO Login | MyHelperNg";
-  //             return res.render("login", {
-  //               errors: errors,
-  //               user: "ngo",
-  //             });
-  //           } else {
-  //             req.flash("success", "Login successful");
-  //             // send to NGO dashboard
-  //             res.render("ngo-dashboard", {
-  //               title: `Dashboard | ${user.ngo_name}`,
-  //               name: user.ngo_name,
-  //             });
-  //           }
-  //         })
-  //         .catch((err) => {
-  //           console.error(err);
-  //         });
-  //     }
-  //   });
-  // }
 };
