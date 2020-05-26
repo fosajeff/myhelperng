@@ -1,3 +1,30 @@
+//dashboard functions
+function volunteers(){
+    document.getElementById('volunteers').classList.remove('hide');
+    document.getElementById('activities').classList.add('hide');
+    document.getElementById('basic-info').classList.add('hide');
+    document.getElementById('ngo-settings').classList.add('hide');
+}
+function activities(){
+    document.getElementById('volunteers').classList.add('hide');
+    document.getElementById('activities').classList.remove('hide');
+    document.getElementById('basic-info').classList.add('hide');
+    document.getElementById('ngo-settings').classList.add('hide');
+}
+function basicInfo(){
+    document.getElementById('volunteers').classList.add('hide');
+    document.getElementById('activities').classList.add('hide');
+    document.getElementById('basic-info').classList.remove('hide');
+    document.getElementById('ngo-settings').classList.add('hide');
+}
+function ngoSettings(){
+    document.getElementById('volunteers').classList.add('hide');
+    document.getElementById('activities').classList.add('hide');
+    document.getElementById('basic-info').classList.add('hide');
+    document.getElementById('ngo-settings').classList.remove('hide');
+}
+
+
 //functions for interests card background on dashboard
 function agriculture2() {
     var element = document.getElementById("agricdiv2");
