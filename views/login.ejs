@@ -17,7 +17,7 @@
         <% if (errors) { %>
         <% errors.forEach(error => { %>
         <center>
-            <div style="width: 50%;" class="alert alert-danger text-center"><%= error.msg %></div>
+            <div style="width: 80%;" class="alert alert-danger text-center"><%= error.msg %></div>
         </center>
         <% }) %>
         <% } %>
@@ -39,6 +39,7 @@
             </div>
         </div>
     </div>
+    <div class="container"></div>
     <%- include('partials/footer') %>
     <script src="../scripts/login-signup.js"></script>
 </body>

@@ -9,7 +9,8 @@ const mongoose = require("mongoose");
 const expressValidator = require("express-validator");
 const flash = require("connect-flash");
 const session = require("express-session");
-const url = process.env.MONGODB_URI;
+const config = require("./config/database");
+const passport = require("passport");
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -56,6 +57,17 @@ app.use(
   })
 );
 
+// Passport Config
+require("./config/passport")(passport);
+// Passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.get("*", (req, res, next) => {
+  res.locals.user = req.user || null;
+  next();
+});
+
 // bring in routes
 const indexRouter = require("./routes/index");
 const authRouter = require("./routes/auth");
@@ -85,7 +97,7 @@ app.use(authRouter);
 const PORT = process.env.PORT || 5000;
 
 mongoose
-  .connect(url, {
+  .connect(config.database, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
