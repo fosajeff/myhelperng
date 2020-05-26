@@ -108,4 +108,7 @@ mongoose
   })
   .catch((err) => console.log("Connection to database failed =>", err));
 
+app.all("*", (req, res) => {
+  res.send({ message: "404 - Error Page" });
+});
 module.exports = app;

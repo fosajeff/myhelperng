@@ -24,7 +24,7 @@
                 <div class="card-view">
                     <div>
                         <img src="../images/male_profile.png" class="profile-img">
-                        <p class="text-center text1"><%= name %></p>
+                        <p class="text-center text1"><%= user.name %></p>
                         <p class="text-center text2">Nigeria</p>
                         <button class="profile-btn" onclick="profile()">View Profile</button>
                     </div>
@@ -141,15 +141,16 @@
             <div class="col-sm-8 col-md-9 col-lg-10 hide" id="profile">
                 <!--Profile column-->
                 <div class="card-view-3">
-                    <h1 class="text9"><%= name %> </h1>
+                    <h1 class="text9"><%= user.name %> </h1>
+                    <p class="text7"><%= user.createdAt %> </p>
                     <hr>
                     <div class="col-md-6">
                         <p class="text8 text7">Email</p>
-                        <p class="text7"><%= email %> </p>
+                        <p class="text7"><%= user.email %> </p>
                     </div>
                     <div class="col-md-6">
                         <p class="text8 text7">Phone Number</p>
-                        <p class="text7"><%= contact %> </p>
+                        <p class="text7"><%= user.contact %> </p>
                     </div>
                     <p class="text8 text7" style="padding-left: 20px;">Interests</p>
                     <ul>
@@ -513,49 +514,79 @@
                     <img src="../images/male_profile.png" class="profile-img">
                     <button class="change-btn">Change Picture</button>
                     <div>
-                        <form>
+                        <form method="POST" action="/user/dashboard/update">
                             <div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <label class="text6">Name</label><br>
-                                    <input type="text" placeholder="" value="<%= name %>" class="input-about">
+                                    <input type="text" name="name" placeholder="" value="<%= user.name %>"
+                                        class="input-about">
                                 </div>
-                                <div class="col-md-6">
-                                    <label class="text6">Country</label><br>
-                                    <input type="text" placeholder="Nigeria" class="input-about">
+                                <div class="col-md-4">
+                                    <label class="text6">State</label><br>
+                                    <select class="input-about" name="state" placeholder="State">
+                                        <option><%= user.state %></option>
+                                        <option>Lagos</option>
+                                        <option>Kano</option>
+                                        <option>Sokoto</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4" style="padding:0 15px">
+                                    <label class="text6">Resident Address</label><br>
+                                    <input class="input-about" name="address" type="text" value="<%= user.address %>"
+                                        placeholder="">
+                                </div>
+                            </div>
+                            <div>
+                                <div class=" col-md-4" style="padding:0 15px">
+                                    <label class="text6">Phone Number</label><br>
+                                    <input class="input-about" name="contact" type="text" value="<%= user.contact %>"
+                                        <%= user.state %> placeholder=" Phone Number">
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label class="text6">Gender</label><br>
+                                    <select class="input-about" name="gender" placeholder="
+                                        Gender">
+                                        <option><%= user.gender %></option>
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="text6">Date of birth</label><br>
+                                    <input type="date" name="dob" placeholder="" value="<%= user.dob %>" class="
+                                        input-about">
                                 </div>
                             </div>
                             <div>
                                 <div class="col-md-4">
                                     <label class="text6">About you</label><br>
-                                    <input type="text" placeholder="" class="input-about">
+                                    <textarea type="text" name="about" placeholder=""
+                                        class="input-about"><%= user.about %></textarea>
                                 </div>
-                                <div class="col-md-4">
-                                    <label class="text6">Gender</label><br>
-                                    <input type="text" placeholder="" value="<%= gender %> " class="input-about">
+                                <!-- <div class="col-md-4 text6" style="padding:10px 15px 0">
+                                    <label>Skills</label><br>
+                                    <input type="checkbox"><span class="checkbox-text">Teaching Online</span>
+                                    <input type="checkbox"><span class="checkbox-text">Social Media Marketing</span>
+                                    <input type="checkbox"><span class="checkbox-text">Research</span>
+                                    <input type="checkbox"><span class="checkbox-text">Video Creation</span>
+                                    <input type="checkbox"><span class="checkbox-text">Design Web Work</span>
+                                    <input type="checkbox"><span class="checkbox-text">Content Writing</span>
+                                </div> -->
+                                <div class="col-md-4" style="padding:0 15px">
+                                    <label style="padding:15px 0 0" class="text6">Past volunteering
+                                        experience</label><br>
+                                    <input class="input-about" name="experience" value="<%= user.experience %>"
+                                        cols="10">
                                 </div>
-                                <div class="col-md-4">
-                                    <label class="text6">Date of birth</label><br>
-                                    <input type="date" placeholder="12/12/12" class="input-about">
+                                <div class="col-md-4" style="padding:0 15px">
+                                    <label style="padding:15px 0 0" class="text6">Social Media Link</label><br>
+                                    <input type="text" name="url" value="<%= user.url %>" class="input-about">
                                 </div>
                             </div>
-                            <div class="text6" style="padding:10px 15px 0">
-                                <label>Skills</label><br>
-                                <input type="checkbox"><span class="checkbox-text">Teaching Online</span>
-                                <input type="checkbox"><span class="checkbox-text">Social Media Marketing</span>
-                                <input type="checkbox"><span class="checkbox-text">Research</span>
-                                <input type="checkbox"><span class="checkbox-text">Video Creation</span>
-                                <input type="checkbox"><span class="checkbox-text">Design Web Work</span>
-                                <input type="checkbox"><span class="checkbox-text">Content Writing</span>
-                            </div>
-                            <div style="padding:0 15px">
-                                <label style="padding:15px 0 0" class="text6">Past volunteering experience</label><br>
-                                <textarea class="input-about" cols="10"></textarea>
-                            </div>
-                            <div style="padding:0 15px">
-                                <label class="text6">Social media link</label><br>
-                                <input type="text" class="input-about">
-                            </div>
-                            <div>
+                            <div class="container"></div>
+                            <div class="text-center">
                                 <input class="profile-btn" type="submit" value="SAVE">
                             </div>
                         </form>
