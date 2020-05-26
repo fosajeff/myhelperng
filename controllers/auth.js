@@ -122,9 +122,13 @@ exports.updateVolunteerProfile = (req, res) => {
     }
   )
     .then(() => {
+<<<<<<< HEAD
       volunteer.save();
     })
     .then((res) => {
+=======
+      req.flash("success", "Update successful");
+>>>>>>> 783a5b308d66406e18c7e80e2bc48d6b43f71009
       res.redirect("/user/dashboard");
     })
     .catch((err) => console.error(err));
