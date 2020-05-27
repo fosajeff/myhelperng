@@ -1,0 +1,84 @@
+.contact-input {
+    width: 30%;
+    border: 1px solid white;
+    background: #cbe4f5;
+    padding: 10px;
+    height: 20px;
+    direction: left;
+}
+
+.contact-input2 {
+    margin: 12px 0;
+    border-radius: 10px;
+}
+
+.contact-btn {
+    color: white;
+    background-color: #170889;
+    border: 2px solid #cbe4f5;
+    border-radius: 40px;
+    text-align: center;
+    padding: 15px 35px;
+    margin: 20px auto 30px;
+    display: block;
+}
+
+.contact-btn2:focus {
+    outline: none
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.input-textarea {
+    margin: 10px 15px 0
+}
+
+.text14 {
+    font-weight: bold;
+}
+
+.text15 {
+    font-size: 1.4em;
+}
+
+.hr1 {
+    border: 0.5px solid #1AD5FE;
+}
+
+.text17 {
+    color: #1AD5FE;
+}
+
+.text18 {
+    color: #1AD5FE;
+}
+
+#section1 .box1-wrap,
+#section1 .box2-wrap {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#section1 .box1-wrap div {
+    width: 33.3%;
+    margin: 0.7rem;
+    padding: 1rem 2rem;
+    box-shadow: 0 1px 10px 1px rgba(200, 200, 200, 0.6);
+}
+
+.a img {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+
+.a {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
