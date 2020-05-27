@@ -19,6 +19,8 @@ exports.volunteerSignUp = (req, res) => {
   req.checkBody("contact", "Not a valid number").isNumeric();
   req.checkBody("state", "State is required").notEmpty();
   req.checkBody("password", "Password is required").notEmpty();
+  req.checkBody("password", "Password too short").isLength({ min: 5 });
+
   req
     .checkBody("password2", "Passwords do not match")
     .equals(req.body.password);
@@ -107,33 +109,45 @@ exports.updateVolunteerProfile = (req, res) => {
     : (experience = req.user.experience);
   updatedBody.url ? (url = updatedBody.url) : (url = req.user.url);
 
-  const volunteer = Volunteer.updateOne(
-    { email: req.user.email },
-    {
-      $set: {
-        name,
-        state,
-        address,
-        contact,
-        gender: gender,
-        dob,
-        about,
-        experience,
-        url,
-      },
-    }
-  )
-    .then(() => {
-      res.redirect("/user/dashboard");
-    })
-    .catch((err) => console.error(err));
+  req.checkBody("url", "Not a valid link").isURL();
+  req.checkBody("contact", "Not a valid number").isNumeric();
+  let errors = req.validationErrors();
+  if (errors) {
+    res.locals.title = `Dashboard | ${req.user.name}`;
+    res.locals.user = req.user;
+    res.render("volunteer-dashboard", {
+      errors: errors,
+    });
+  } else {
+    Volunteer.updateOne(
+      { email: req.user.email },
+      {
+        $set: {
+          name,
+          state,
+          address,
+          contact,
+          gender,
+          dob,
+          about,
+          experience,
+          url,
+        },
+      }
+    )
+      .then(() => {
+        req.flash("success", "Update successful");
+        res.redirect("/user/dashboard");
+      })
+      .catch((err) => console.error(err));
+  }
 };
 
 //  for NGo
 
 exports.getNgoSignUp = (req, res) => {
   res.locals.title = "NGO Join | MyHelperNg";
-  res.render("auth/ngo-signup", { errors: null });
+  res.render("auth/ngo-signup", { errors: null, user: null });
 };
 
 // POST /join/ngo
@@ -146,6 +160,7 @@ exports.ngoSignUp = (req, res) => {
   req.checkBody("link", "Not a valid link").isURL();
   req.checkBody("state", "State is required").notEmpty();
   req.checkBody("password", "Password is required").notEmpty();
+  req.checkBody("password", "Password too short").isLength({ min: 5 });
   req
     .checkBody("password2", "Passwords do not match")
     .equals(req.body.password);
@@ -212,4 +227,76 @@ exports.ngoLogIn = async (req, res, next) => {
     failureRedirect: "/login/ngo",
     failureFlash: true,
   })(req, res, next);
+};
+
+// POST update profile info
+exports.updateNgoProfile = (req, res) => {
+  let updatedBody = req.body;
+  updatedBody.ngo_name
+    ? (ngo_name = updatedBody.ngo_name)
+    : (ngo_name = req.user.ngo_name);
+
+  updatedBody.state ? (state = updatedBody.state) : (state = req.user.state);
+  updatedBody.link ? (link = updatedBody.link) : (link = req.user.link);
+
+  updatedBody.address
+    ? (address = updatedBody.address)
+    : (address = req.user.address);
+
+  updatedBody.contact_name
+    ? (contact_name = updatedBody.contact_name)
+    : (contact_name = req.user.contact_name);
+
+  updatedBody.contact_email
+    ? (contact_email = updatedBody.contact_email)
+    : (contact_email = req.user.contact_email);
+
+  updatedBody.contact_phone
+    ? (contact_phone = updatedBody.contact_phone)
+    : (contact_phone = req.user.contact_phone);
+
+  updatedBody.description
+    ? (description = updatedBody.description)
+    : (description = req.user.description);
+
+  updatedBody.causes
+    ? (causes = updatedBody.causes)
+    : (causes = req.user.causes);
+
+  updatedBody.reg_number
+    ? (reg_number = updatedBody.reg_number)
+    : (reg_number = req.user.reg_number);
+
+  // req.checkBody("link", "Not a valid link").isURL();
+  // req.checkBody("contact_phone", "Contact number is not valid").isNumeric();
+  // let errors = req.validationErrors();
+  // if (errors) {
+  //   res.locals.title = `Dashboard | ${req.user.name}`;
+  //   res.locals.user = req.user;
+  //   res.render("ngo-dashboard", {
+  //     errors: errors,
+  //   });
+  // }
+  Ngo.updateOne(
+    { email: req.user.email },
+    {
+      $set: {
+        ngo_name,
+        state,
+        address,
+        contact_name,
+        contact_email,
+        contact_phone,
+        description,
+        link,
+        causes,
+        reg_number,
+      },
+    }
+  )
+    .then(() => {
+      req.flash("success", "Update successful");
+      res.redirect("/org/dashboard");
+    })
+    .catch((err) => console.error(err));
 };

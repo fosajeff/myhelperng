@@ -65,6 +65,7 @@ app.use(passport.session());
 
 app.get("*", (req, res, next) => {
   res.locals.user = req.user || null;
+  // req.session.flash = [];
   next();
 });
 
