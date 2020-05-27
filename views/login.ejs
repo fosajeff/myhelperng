@@ -10,9 +10,7 @@
 <body>
     <%- include('partials/nav') %>
     <div>
-        <div>
-            <img src="../images/logo.png" class="logo-login">
-        </div>
+
         <%- messages("message", locals) %>
         <% if (errors) { %>
         <% errors.forEach(error => { %>
