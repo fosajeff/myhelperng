@@ -2,16 +2,11 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><% title %></title>
-    <link rel="icon" href="../images/favicon.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
-    <link rel="stylesheet" href="../stylesheets/header-footer.css">
     <link rel="stylesheet" href="../stylesheets/volunteer-dashboard.css">
-    <script src="../public/scripts/main.js"></script>
 </head>
+<%- include('partials/meta-data') %>
+
 
 <body>
     <%- include('partials/nav') %>
@@ -168,16 +163,28 @@
                     </form>
                 </div>
                 <!--OPportunities colomn-->
+                <% if (ngos) { %>
+
+                <% ngos.forEach(ngo => { %>
+
                 <div class="col-sm-12 col-md-6 col-lg-4 card-text">
-                    <a href="">
+                    <a href="/orgs/<%= ngo.ngo_name %>">
                         <div class="card-view-2">
                             <img class="img-responsive" src="../images/pic1.jpg" alt="" />
-                            <h4 class="text-center text1">UCESCO- KENYA</h4>
-                            <h6 class="text-center text2" style="padding-bottom:20px">Nairobi, Kenya</h6>
+                            <h4 class="text-center text1"><%= ngo.ngo_name %> </h4>
+                            <h6 class="text-center text2" style="padding-bottom:20px"><%= ngo.state %>, Nigeria</h6>
                         </div>
                     </a>
                 </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 card-text">
+
+                <% }) %>
+
+                <% } else { %>
+                <div><span class="text3">OPPORTUNITIES</span></div>
+                <% } %>
+
+
+                <!-- <div class="col-sm-12 col-md-6 col-lg-4 card-text">
                     <a href="">
                         <div class="card-view-2">
                             <img class="img-responsive" src="../images/pic2.jpg" alt="" />
@@ -275,7 +282,7 @@
                             <h6 class="text-center text2" style="padding-bottom:20px">Nairobi, Kenya</h6>
                         </div>
                     </a>
-                </div>
+                </div> -->
                 <div class="col-sm-12 clo-md-12 col-lg-12">
                     <button class="profile-btn">More opportunities</button>
                 </div>
@@ -514,7 +521,7 @@
                     <img src="../images/male_profile.png" class="profile-img">
                     <button class="change-btn">Change Picture</button>
                     <div>
-                        <form method="POST" action="/user/dashboard/update">
+                        <form method="POST" action="/user/dashboard">
                             <div>
                                 <div class="col-md-4">
                                     <label class="text6">Name</label><br>
@@ -523,11 +530,45 @@
                                 </div>
                                 <div class="col-md-4">
                                     <label class="text6">State</label><br>
-                                    <select class="input-about" name="state" placeholder="State">
+                                    <select class="input-about" name="state">
                                         <option><%= user.state %></option>
-                                        <option>Lagos</option>
+                                        <option>Abia</option>
+                                        <option>Adamawa</option>
+                                        <option>Akwa Ibom</option>
+                                        <option>Anambra</option>
+                                        <option>Bauchi</option>
+                                        <option>Bayelsa</option>
+                                        <option>Benue</option>
+                                        <option>Borno</option>
+                                        <option>Cross River</option>
+                                        <option>Delta</option>
+                                        <option>Ebonyi</option>
+                                        <option>Edo</option>
+                                        <option>Ekiti</option>
+                                        <option>Enugu</option>
+                                        <option>Federal Capital Territory</option>
+                                        <option>Gombe</option>
+                                        <option>Imo</option>
+                                        <option>Jigawa</option>
+                                        <option>Kaduna</option>
                                         <option>Kano</option>
+                                        <option>Katsina</option>
+                                        <option>Kebbi</option>
+                                        <option>Kogi</option>
+                                        <option>Kwara</option>
+                                        <option>Lagos</option>
+                                        <option>Nasarawa</option>
+                                        <option>Niger</option>
+                                        <option>Ogun</option>
+                                        <option>Ondo</option>
+                                        <option>Osun</option>
+                                        <option>Oyo</option>
+                                        <option>Plateau</option>
+                                        <option>Rivers</option>
                                         <option>Sokoto</option>
+                                        <option>Taraba</option>
+                                        <option>Yobe</option>
+                                        <option>Zamfara</option>
                                     </select>
                                 </div>
                                 <div class="col-md-4" style="padding:0 15px">
@@ -565,15 +606,7 @@
                                     <textarea type="text" name="about" placeholder=""
                                         class="input-about"><%= user.about %></textarea>
                                 </div>
-                                <!-- <div class="col-md-4 text6" style="padding:10px 15px 0">
-                                    <label>Skills</label><br>
-                                    <input type="checkbox"><span class="checkbox-text">Teaching Online</span>
-                                    <input type="checkbox"><span class="checkbox-text">Social Media Marketing</span>
-                                    <input type="checkbox"><span class="checkbox-text">Research</span>
-                                    <input type="checkbox"><span class="checkbox-text">Video Creation</span>
-                                    <input type="checkbox"><span class="checkbox-text">Design Web Work</span>
-                                    <input type="checkbox"><span class="checkbox-text">Content Writing</span>
-                                </div> -->
+
                                 <div class="col-md-4" style="padding:0 15px">
                                     <label style="padding:15px 0 0" class="text6">Past volunteering
                                         experience</label><br>

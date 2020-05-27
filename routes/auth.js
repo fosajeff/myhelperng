@@ -9,7 +9,9 @@ const {
   getNgoLogin,
   ngoLogIn,
   updateVolunteerProfile,
+  updateNgoProfile,
 } = require("../controllers/auth");
+const Ngo = require("../models/ngo");
 
 // GET intro page
 router.get("/join", (req, res) => {
@@ -31,7 +33,11 @@ router.post("/join/volunteer", volunteerSignUp);
 router.get("/user/dashboard", (req, res) => {
   if (typeof req.user !== "undefined") {
     res.locals.title = `Dashboard | ${req.user.name}`;
-    res.render("volunteer-dashboard");
+    Ngo.find().then((ngos) => {
+      res.render("volunteer-dashboard", {
+        ngos: ngos,
+      });
+    });
   } else {
     res.redirect("/login");
   }
@@ -41,7 +47,7 @@ router.get("/user/dashboard", (req, res) => {
 router.route("/login/volunteer").get(getVoluteerLogin).post(volunteerLogIn);
 
 // update volunteer dashboard
-router.post("/user/dashboard/update", updateVolunteerProfile);
+router.post("/user/dashboard", updateVolunteerProfile);
 
 // GET ngo signup
 router.get("/join/ngo", getNgoSignUp);
@@ -54,12 +60,15 @@ router.get("/org/dashboard", (req, res) => {
   if (typeof req.user !== "undefined") {
     res.locals.title = `Dashboard | ${req.user.ngo_name}`;
     res.render("ngo-dashboard", {
-      name: req.user.ngo_name,
+      errors: null,
     });
   } else {
     res.redirect("/login");
   }
 });
+
+// update ngo dashboard
+router.post("/org/dashboard", updateNgoProfile);
 
 // logout
 
