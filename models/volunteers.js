@@ -17,12 +17,16 @@ const volunteerSchema = new Schema(
     },
     contact: {
       type: Number,
+      default: 0,
     },
     gender: {
       type: String,
       enum: ["Male", "Female", "Other"],
     },
-    about: String,
+    about: {
+      type: String,
+      default: "",
+    },
     address: String,
     dob: String,
     state: String,

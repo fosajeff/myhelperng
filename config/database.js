@@ -1,5 +1,4 @@
 module.exports = {
-  // process.env.MONGODB_URI
-  database: "mongodb://localhost:27017/myHelperNg",
+  database: process.env.MONGODB_URI,
   secret: "awniefiwegAWsy",
 };

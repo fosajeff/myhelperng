@@ -2,45 +2,40 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign up to have an account</title>
-    <link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
     <link rel="stylesheet" href="../stylesheets/login-signup.css">
 </head>
+<%- include('partials/meta-data') %>
 
 <body>
-    <div>
-        <a href="/"><img src="../images/logo.png" class="logo-login"></a>
+    <%- include('partials/nav') %>
+    <div class="text-center" style="padding:10px 20px">
+        <h1>Join Us to Support More Inspiring Cause across Nigeria.</h1>
+        <p class="text4">Donate today to reach out to the communities you love and care about</p>
     </div>
-
-    <div class="col-md-12 hide" id="donor-signup-part">
+    <div class="col-md-12" id="donor-signup-part">
         <div class="col-md-6">
-            <img src="../images/donor.png" class="ngo-signup-image signup-image">
+            <img src="../images/donor.png" class="signup-image">
         </div>
         <div class="col-md-6">
             <div class="card-view">
-                <h1 class="text-center text1">Dononate</h1>
-                <p class="text-center text2">Fill the form below to join as a Donor</p>
+                <h1 class="text-center text1"><%= ngo.ngo_name %> </h1>
+                <p class="text-center text2">MyHelperNg secures your online payments</p>
                 <form method="" action="">
-                    <input class="input-group" type="text" placeholder="Name">
-                    <input class="input-group" type="text" placeholder="Email">
-                    <input class="input-group" type="text" placeholder="Address">
-                    <select class="input-group" placeholder="State">
-                        <option>State</option>
-                        <option>Lagos</option>
-                        <option>Ogun</option>
-                        <option>Abuja</option>
-                    </select>
-                    <input class="input-group" type="password" placeholder="Password">
-                    <input class="input-group" type="password" placeholder="Confirm Password">
-                    <input class="signup-btn" type="submit" value="Join">
-                    <p class="text-center text4 text4a"><a href="login.html">Already joined? If yes, login</a></p>
+                    <input class="input-group" type="text" placeholder="NAME">
+                    <input class="input-group" type="text" placeholder="EMAIL">
+                    <input class="input-group" type="text" placeholder="AMOUNT">
+                    <input class="input-group" type="text" placeholder="CARD NUMBER">
+                    <input class="input-group" type="text" placeholder="MM/YY">
+                    <input class="input-group" type="password" placeholder="CODE">
+                    <input class="signup-btn" type="submit" value="Donate">
                 </form>
             </div>
         </div>
     </div>
+    <div class="container"></div>
+    <%- include('partials/footer') %>
+
+    <script src="../scripts/login-signup.js"></script>
 </body>
 
 </html>
