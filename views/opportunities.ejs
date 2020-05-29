@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="../stylesheets/volunteer-dashboard.css">
+</head>
+<%- include('partials/meta-data') %>
+
+
+<body>
+    <%- include('partials/nav') %>
+    <div>
+        <br><br>
+        <%- messages("message", locals) %>
+        <div class="col-sm-12">
+            <form class="search-container" method="POST" action="/opportunities/search?">
+                <input type="text" name="search" id="search-bar" placeholder="Search">
+                <input type="image" name="submit" src="../images/search.png" alt="Submit" />
+            </form>
+            <!--OPportunities colomn-->
+
+        </div>
+        <div style="background-color: rgba(230, 230, 230, 0.795);" class="col-sm-12 col-md-12 col-lg-12">
+            <% if (ngos !== null) { %>
+
+            <% ngos.forEach(ngo => { %>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 card-text">
+                <a href="/orgs/<%= ngo.ngo_name %>">
+                    <div class="card-view-2">
+                        <img class="img-responsive" src="../images/pic1.jpg" alt="" />
+                        <h4 class="text-center text1"><%= ngo.ngo_name %> </h4>
+                        <h6 class="text-center text2" style="padding-bottom:20px"><%= ngo.state %> State, Nigeria
+                        </h6>
+                    </div>
+                </a>
+            </div>
+
+            <% }) %>
+            <div class="col-sm-12 clo-md-12 col-lg-12">
+                <button class="profile-btn">More opportunities</button>
+            </div>
+
+            <% } else { %>
+            <div><span class="text3">OPPORTUNITIES</span></div>
+            <% } %>
+
+            <div class="col-sm-4 col-md-3 col-lg-2 desktop-display">
+            </div>
+
+        </div>
+    </div>
+    <div class="container"></div>
+    <%- include('partials/footer') %>
+    <script src="../scripts/volunteer-dashboard.js"></script>
+</body>
+
+
+</html>

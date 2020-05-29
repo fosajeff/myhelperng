@@ -4,7 +4,7 @@
             <img src="../images/logo.png" alt="logo" class="logo" />
         </a>
         <ul class="navigation">
-            <% if (!user) { %>
+            <% if (user === null) { %>
             <li><a href="/join"><button class="header-btn">Join</button></a></li>
             <li><a href="/login" class="text-header">Log In</a></li>
             <% } else { %>
@@ -20,7 +20,7 @@
             <li><a href="/logout" class="text-header">Log Out</a></li>
             <% } %>
 
-            <li><a href="/#contact" class="text-header">Contact Us</a></li>
+            <li><a href="/opportunities" class="text-header">Volunteer Opportunities</a></li>
             <li><a href="/about" class="text-header">About Us</a></li>
             <li><a href="/" class="text-header">Home</a></li>
         </ul>
@@ -48,7 +48,7 @@
         <div>
             <div class=""><a href="/" onclick="closeSlideMenu()">Home</a></div>
             <div class=""><a href="/about" onclick="closeSlideMenu()">About Us</a></div>
-            <div class=""><a href="/#contact" class="text-header">Contact Us</a></div>
+            <div class=""><a href="/opportunities" class="text-header">Volunteer Opportunities</a></div>
             <% if (!user) { %>
             <div class=""><a href="/login" onclick="closeSlideMenu()">Log In</a></div>
             <div class=""><a href="/join" onclick="closeSlideMenu()"><button class="header-btn"

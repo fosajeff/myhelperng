@@ -11,6 +11,14 @@
 <body>
     <%- include('partials/nav') %>
     <div>
+        <%- messages("message", locals) %>
+        <% if (errors) { %>
+        <% errors.forEach(error => { %>
+        <center>
+            <div style="width: 80%;" class="alert alert-danger text-center"><%= error.msg %></div>
+        </center>
+        <% }) %>
+        <% } %>
         <div>
             <!--header-->
         </div>
@@ -157,9 +165,9 @@
             </div>
             <div class="col-sm-8 col-md-9 col-lg-10" id="opportunities">
                 <div class="col-sm-12">
-                    <form class="search-container">
+                    <form class="search-container" method="POST" action="/opportunities/search?">
                         <input type="text" id="search-bar" placeholder="SEARCH">
-                        <a href="#"><img class="search-icon" src="../images/search.png"></a>
+                        <input type="image" name="submit" src="../images/search.png" alt="Submit" />
                     </form>
                 </div>
                 <!--OPportunities colomn-->
@@ -172,7 +180,8 @@
                         <div class="card-view-2">
                             <img class="img-responsive" src="../images/pic1.jpg" alt="" />
                             <h4 class="text-center text1"><%= ngo.ngo_name %> </h4>
-                            <h6 class="text-center text2" style="padding-bottom:20px"><%= ngo.state %>, Nigeria</h6>
+                            <h6 class="text-center text2" style="padding-bottom:20px"><%= ngo.state %> State, Nigeria
+                            </h6>
                         </div>
                     </a>
                 </div>
@@ -183,106 +192,6 @@
                 <div><span class="text3">OPPORTUNITIES</span></div>
                 <% } %>
 
-
-                <!-- <div class="col-sm-12 col-md-6 col-lg-4 card-text">
-                    <a href="">
-                        <div class="card-view-2">
-                            <img class="img-responsive" src="../images/pic2.jpg" alt="" />
-                            <h4 class="text-center text1">UCESCO- KENYA</h4>
-                            <h6 class="text-center text2" style="padding-bottom:20px">Nairobi, Kenya</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 card-text">
-                    <a href="">
-                        <div class="card-view-2">
-                            <img class="img-responsive" src="../images/pic3.jpg" alt="" />
-                            <h4 class="text-center text1">UCESCO- KENYA</h4>
-                            <h6 class="text-center text2" style="padding-bottom:20px">Nairobi, Kenya</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 card-text">
-                    <a href="">
-                        <div class="card-view-2">
-                            <img class="img-responsive" src="../images/pic4.jpg" alt="" />
-                            <h4 class="text-center text1">New chapter development for youth</h4>
-                            <h6 class="text-center text2" style="padding-bottom:20px">Nairobi, Kenya</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 card-text">
-                    <a href="">
-                        <div class="card-view-2">
-                            <img class="img-responsive" src="../images/pic5.jpg" alt="" />
-                            <h4 class="text-center text1">UCESCO- KENYA</h4>
-                            <h6 class="text-center text2" style="padding-bottom:20px">Nairobi, Kenya</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 card-text">
-                    <a href="">
-                        <div class="card-view-2">
-                            <img class="img-responsive" src="../images/pic1.jpg" alt="" />
-                            <h4 class="text-center text1">UCESCO- KENYA</h4>
-                            <h6 class="text-center text2" style="padding-bottom:20px">Nairobi, Kenya</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 card-text">
-                    <a href="">
-                        <div class="card-view-2">
-                            <img class="img-responsive" src="../images/pic2.jpg" alt="" />
-                            <h4 class="text-center text1">UCESCO- KENYA</h4>
-                            <h6 class="text-center text2" style="padding-bottom:20px">Nairobi, Kenya</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 card-text">
-                    <a href="">
-                        <div class="card-view-2">
-                            <img class="img-responsive" src="../images/pic3.jpg" alt="" />
-                            <h4 class="text-center text1">UCESCO- KENYA</h4>
-                            <h6 class="text-center text2" style="padding-bottom:20px">Nairobi, Kenya</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 card-text">
-                    <a href="">
-                        <div class="card-view-2">
-                            <img class="img-responsive" src="../images/pic4.jpg" alt="" />
-                            <h4 class="text-center text1">New chapter development for youth</h4>
-                            <h6 class="text-center text2" style="padding-bottom:20px">Nairobi, Kenya</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 card-text">
-                    <a href="">
-                        <div class="card-view-2">
-                            <img class="img-responsive" src="../images/pic5.jpg" alt="" />
-                            <h4 class="text-center text1">UCESCO- KENYA</h4>
-                            <h6 class="text-center text2" style="padding-bottom:20px">Nairobi, Kenya</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 card-text">
-                    <a href="">
-                        <div class="card-view-2">
-                            <img class="img-responsive" src="../images/pic4.jpg" alt="" />
-                            <h4 class="text-center text1">New chapter development for youth</h4>
-                            <h6 class="text-center text2" style="padding-bottom:20px">Nairobi, Kenya</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 card-text">
-                    <a href="">
-                        <div class="card-view-2">
-                            <img class="img-responsive" src="../images/pic5.jpg" alt="" />
-                            <h4 class="text-center text1">UCESCO- KENYA</h4>
-                            <h6 class="text-center text2" style="padding-bottom:20px">Nairobi, Kenya</h6>
-                        </div>
-                    </a>
-                </div> -->
                 <div class="col-sm-12 clo-md-12 col-lg-12">
                     <button class="profile-btn">More opportunities</button>
                 </div>

@@ -12,10 +12,10 @@
 
 <body>
     <div id="messages">
-        <% Object.keys(messages).forEach(function (type) { %>
+        <% Object.keys(messages).forEach((type) => { %>
         <% messages[type].forEach(function (message) { %>
         <center>
-            <div style="width: 80%;" class="alert alert-success"><%= message %></div>
+            <div style="width: 80%; font-size: medium;" class="alert alert-success"><%= message %></div>
         </center>
         <% }) %>
         <% }) %>

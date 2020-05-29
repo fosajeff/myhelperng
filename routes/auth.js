@@ -36,6 +36,7 @@ router.get("/user/dashboard", (req, res) => {
     Ngo.find().then((ngos) => {
       res.render("volunteer-dashboard", {
         ngos: ngos,
+        errors: null,
       });
     });
   } else {

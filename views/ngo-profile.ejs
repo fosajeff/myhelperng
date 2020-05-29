@@ -15,17 +15,20 @@
     <script src="../scripts/ngo-dashboard.js"></script>
 </head>
 
-<body>
-    <%- include('partials/nav') %>
+<%- include('partials/nav') %>
 
+<body>
+    <br>
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <img src="../images/pic1.jpg" class="img-responsive" style="width: 100%;">
+    </div>
     <div class="col-sm-12 col-md-12 col-lg-12">
         <div class="col-sm-8 col-md-9 col-lg-10" id="profile">
             <!--Profile column-->
-            <% if (!ngo === null) { %>
+            <% if (!(ngo === null)) { %>
 
             <div class="card-view-3">
-                <img src="../images/pic1.jpg" class="img-responsive" style="width: 100%;">
-                <h1 class="text9"><%= ngo.ngo_name %></h1>
+                <h1 class=""><%= ngo.ngo_name %></h1>
                 <hr>
                 <div class="col-md-6">
                     <p class="text8 text7">Email</p>
@@ -52,17 +55,18 @@
                     <button class="header-btn">Join Nonprofit</button>
                 </div>
             </div>
-            <% } else { %>
-            <p class="text3">No ngo</p>
-            <% } %>
+
         </div>
         <div class="col-sm-4 col-md-3 col-lg-2" id="profile">
             <div class="card-view">
                 <h4>
                     Donate into this NGO account
                 </h4>
-                <button class="header-btn">DONATE</button>
+                <a href="/<%= ngo.ngo_name %>/give"><button class="header-btn">DONATE</button>
             </div>
+            <% } else { %>
+            <p class="text3">No ngo</p>
+            <% } %>
         </div>
     </div>
     <div class="container"></div>

@@ -109,15 +109,12 @@ exports.updateVolunteerProfile = (req, res) => {
     : (experience = req.user.experience);
   updatedBody.url ? (url = updatedBody.url) : (url = req.user.url);
 
-  req.checkBody("url", "Not a valid link").isURL();
   req.checkBody("contact", "Not a valid number").isNumeric();
   let errors = req.validationErrors();
   if (errors) {
     res.locals.title = `Dashboard | ${req.user.name}`;
     res.locals.user = req.user;
-    res.render("volunteer-dashboard", {
-      errors: errors,
-    });
+    res.redirect("/user/dashboard");
   } else {
     Volunteer.updateOne(
       { email: req.user.email },
@@ -136,7 +133,6 @@ exports.updateVolunteerProfile = (req, res) => {
       }
     )
       .then(() => {
-        req.flash("success", "Update successful");
         res.redirect("/user/dashboard");
       })
       .catch((err) => console.error(err));
@@ -267,16 +263,6 @@ exports.updateNgoProfile = (req, res) => {
     ? (reg_number = updatedBody.reg_number)
     : (reg_number = req.user.reg_number);
 
-  // req.checkBody("link", "Not a valid link").isURL();
-  // req.checkBody("contact_phone", "Contact number is not valid").isNumeric();
-  // let errors = req.validationErrors();
-  // if (errors) {
-  //   res.locals.title = `Dashboard | ${req.user.name}`;
-  //   res.locals.user = req.user;
-  //   res.render("ngo-dashboard", {
-  //     errors: errors,
-  //   });
-  // }
   Ngo.updateOne(
     { email: req.user.email },
     {
@@ -295,7 +281,6 @@ exports.updateNgoProfile = (req, res) => {
     }
   )
     .then(() => {
-      req.flash("success", "Update successful");
       res.redirect("/org/dashboard");
     })
     .catch((err) => console.error(err));
