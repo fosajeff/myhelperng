@@ -11,13 +11,16 @@
 
             <% if (user.name) { %>
             <li><a href="/user/dashboard" class="text-header">My Account</a></li>
+            <li><a href="/logout" class="text-header">Log Out</a></li>
             <% } else if (user.ngo_name) { %>
             <li><a href="/org/dashboard" class="text-header">My Account</a></li>
+            <li><a href="/logout" class="text-header">Log Out</a></li>
             <% } else { %>
-            <li><a href="#" class="text-header">My Account</a></li>
+            <li><a href="/join"><button class="header-btn">Join</button></a></li>
+            <li><a href="/login" class="text-header">Log In</a></li>
             <% } %>
 
-            <li><a href="/logout" class="text-header">Log Out</a></li>
+
             <% } %>
 
             <li><a href="/opportunities" class="text-header">Volunteer Opportunities</a></li>
@@ -59,14 +62,17 @@
             <% if (user.name) { %>
             <div class="">
                 <div class=""><a href="/user/dashboard" onclick="closeSlideMenu()">My Account</a></div>
+                <div class=""><a href="/logout" class="text-header">Log Out</a></div>
             </div>
             <% } else if (user.ngo_name) { %>
             <div class=""><a href="/org/dashboard" onclick="closeSlideMenu()">My Account</a></div>
+            <div class=""><a href="/logout" class="text-header">Log Out</a></div>
             <% } else { %>
-            <div class=""><a href="#" class="text-header">My Account</a></div>
+            <div class=""><a href="/login" onclick="closeSlideMenu()">Log In</a></div>
+            <div class=""><a href="/join" onclick="closeSlideMenu()"><button class="header-btn"
+                        style="width:20%;">Join</button></a></div>
             <% } %>
 
-            <div class=""><a href="/logout" class="text-header">Log Out</a></div>
             <% } %>
 
         </div>

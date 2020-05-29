@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Applicants</title>
+    <link rel="icon" href="../images/favicon.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="../stylesheets/header-footer.css">
+    <link rel="stylesheet" href="../stylesheets/volunteer-dashboard.css">
+    <link rel="stylesheet" href="../stylesheets/ngo-dashboard.css">
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/ngo-dashboard.js"></script>
+</head>
+<%- include('partials/nav') %>
+
+<body>
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <div>
+            <center>
+                <div class="card-view-3" style="max-width: 600px; text-align: left;">
+                    <h2 class="text-center"><%= volunteer.name %> </h2><br>
+                    <div>
+                        <div>
+                            <label class="text6">Gender</label><br>
+                            <input placeholder="" value="<%= volunteer.gender %>" class="form-control form-text"
+                                disabled>
+                        </div>
+                        <br>
+                        <div>
+                            <label class="text6">Resumption Date</label><br>
+                            <input placeholder="" value="<%= volunteer.start_date %>" class="form-control form-text"
+                                disabled>
+                        </div>
+                        <br>
+                        <div>
+                            <label class="text6">Duration of Volunteer stay</label><br>
+                            <input placeholder="" value="<%= volunteer.stay_number %> <%= volunteer.stay_duration %> "
+                                class="form-control form-text" disabled>
+                        </div>
+                        <br>
+                        <div>
+                            <label class="text6">Number of volunteers</label><br>
+                            <input placeholder="" value="<%= volunteer.no_volunteers %>" class="form-control form-text"
+                                disabled>
+                        </div>
+                        <br>
+                        <div>
+                            <label class="text6">Phone Number</label><br>
+                            <input placeholder="" value="<%= volunteer.phone_number %>" class="form-control form-text"
+                                disabled>
+                        </div>
+                        <br>
+                        <div>
+                            <label class="text6">State</label><br>
+                            <input placeholder="" value="<%= volunteer.state %>" class="form-control form-text"
+                                disabled>
+                        </div>
+                        <br>
+                        <div>
+                            <label class="text6">Age</label><br>
+                            <input placeholder="" value="<%= volunteer.age %>" class="form-control form-text" disabled>
+                        </div>
+                        <br>
+                        <div>
+                            <label class="text6">Occupation</label><br>
+                            <input placeholder="" value="<%= volunteer.occupation %>" class="form-control form-text"
+                                disabled>
+                        </div>
+                        <br>
+                        <div>
+                            <label class="text6">Other Information</label><br>
+                            <input placeholder="" value="<%= volunteer.other %>" class="form-control form-text"
+                                disabled>
+                        </div>
+                    </div>
+                    <br>
+                    <a class="text-6" href="/org/dashboard">Return to your dashboard</a>
+            </center>
+            <br><br>
+        </div>
+    </div>
+    <div class="container"></div>
+    <%- include('partials/footer') %>
+</body>
+
+</html>

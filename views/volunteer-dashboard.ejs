@@ -435,11 +435,11 @@
                                 <div class="col-md-4">
                                     <label class="text6">Name</label><br>
                                     <input type="text" name="name" placeholder="" value="<%= user.name %>"
-                                        class="input-about">
+                                        class="form-control form-text">
                                 </div>
                                 <div class="col-md-4">
                                     <label class="text6">State</label><br>
-                                    <select class="input-about" name="state">
+                                    <select class="form-control form-text" name="state">
                                         <option><%= user.state %></option>
                                         <option>Abia</option>
                                         <option>Adamawa</option>
@@ -482,21 +482,20 @@
                                 </div>
                                 <div class="col-md-4" style="padding:0 15px">
                                     <label class="text6">Resident Address</label><br>
-                                    <input class="input-about" name="address" type="text" value="<%= user.address %>"
-                                        placeholder="">
+                                    <input class="form-control form-text" name="address" type="text"
+                                        value="<%= user.address %>" placeholder="">
                                 </div>
                             </div>
                             <div>
                                 <div class=" col-md-4" style="padding:0 15px">
                                     <label class="text6">Phone Number</label><br>
-                                    <input class="input-about" name="contact" type="text" value="<%= user.contact %>"
-                                        <%= user.state %> placeholder=" Phone Number">
+                                    <input class="form-control form-text" name="contact" type="text"
+                                        value="<%= user.contact %>" <%= user.state %> placeholder=" Phone Number">
                                 </div>
 
                                 <div class="col-md-4">
                                     <label class="text6">Gender</label><br>
-                                    <select class="input-about" name="gender" placeholder="
-                                        Gender">
+                                    <select class="form-control form-text" name="gender">
                                         <option><%= user.gender %></option>
                                         <option>Male</option>
                                         <option>Female</option>
@@ -513,18 +512,19 @@
                                 <div class="col-md-4">
                                     <label class="text6">About you</label><br>
                                     <textarea type="text" name="about" placeholder=""
-                                        class="input-about"><%= user.about %></textarea>
+                                        class="form-control form-text"><%= user.about %></textarea>
                                 </div>
 
                                 <div class="col-md-4" style="padding:0 15px">
                                     <label style="padding:15px 0 0" class="text6">Past volunteering
                                         experience</label><br>
-                                    <input class="input-about" name="experience" value="<%= user.experience %>"
-                                        cols="10">
+                                    <input class="form-control form-text" name="experience"
+                                        value="<%= user.experience %>" cols="10">
                                 </div>
                                 <div class="col-md-4" style="padding:0 15px">
                                     <label style="padding:15px 0 0" class="text6">Social Media Link</label><br>
-                                    <input type="text" name="url" value="<%= user.url %>" class="input-about">
+                                    <input type="text" name="url" value="<%= user.url %>"
+                                        class="form-control form-text">
                                 </div>
                             </div>
                             <div class="container"></div>

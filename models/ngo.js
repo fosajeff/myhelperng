@@ -15,8 +15,26 @@ const ngoSchema = new Schema(
     contact_name: { type: String },
     contact_email: { type: String },
     contact_phone: { type: String },
-    causes: { type: String },
-    accessToken: { type: String },
+    mission_statement: { type: String },
+    terms_and_condition: { type: String },
+    volunteers: [
+      {
+        name: String,
+        gender: {
+          type: String,
+          enum: ["Male", "Female", "Other"],
+        },
+        start_date: String,
+        stay_number: String,
+        stay_duration: String,
+        no_volunteers: String,
+        phone_number: String,
+        state: String,
+        other: String,
+        occupation: String,
+        age: String,
+      },
+    ],
   },
   { timestamps: true }
 );

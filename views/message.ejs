@@ -14,9 +14,19 @@
     <div id="messages">
         <% Object.keys(messages).forEach((type) => { %>
         <% messages[type].forEach(function (message) { %>
+        <% if (messages["success"]) { %>
         <center>
             <div style="width: 80%; font-size: medium;" class="alert alert-success"><%= message %></div>
         </center>
+        <% } else if (messages["info"]) { %>
+        <center>
+            <div style="width: 80%; font-size: medium;" class="alert alert-info"><%= message %></div>
+        </center>
+        <% } else { %>
+        <center>
+            <div style="width: 80%; font-size: medium;" class="alert alert-danger"><%= message %></div>
+        </center>
+        <% } %>
         <% }) %>
         <% }) %>
     </div>

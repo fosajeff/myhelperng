@@ -60,11 +60,32 @@ router.route("/login/ngo").get(getNgoLogin).post(ngoLogIn);
 router.get("/org/dashboard", (req, res) => {
   if (typeof req.user !== "undefined") {
     res.locals.title = `Dashboard | ${req.user.ngo_name}`;
-    res.render("ngo-dashboard", {
-      errors: null,
+    Ngo.findOne({ ngo_name: req.user.ngo_name }).then((ngo) => {
+      res.render("ngo-dashboard", {
+        errors: null,
+        volunteers: ngo.volunteers,
+      });
     });
   } else {
     res.redirect("/login");
+  }
+});
+
+// ngo volunteer applicants
+router.get("/:id/:volunteer", (req, res) => {
+  if (req.user) {
+    Ngo.findOne({ ngo_name: req.params.id })
+      .then((ngo) => {
+        const get_volunteer = ngo.volunteers.filter((user) => {
+          return user.name === req.params.volunteer;
+        });
+        res.render("ngo-applicants", {
+          volunteer: get_volunteer[0],
+        });
+      })
+      .catch((err) => console.log(err));
+  } else {
+    res.redirect("/login/volunteer");
   }
 });
 
