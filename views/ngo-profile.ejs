@@ -31,8 +31,12 @@
                 <h1 class=""><%= ngo.ngo_name %></h1>
                 <hr>
                 <div class="col-md-6">
-                    <p class="text8 text7">Email</p>
-                    <p class="text7"><%= ngo.email %></p>
+                    <p class="text8 text7">Our Mission</p>
+                    <p class="text7"><%= ngo.mission_statement %></p>
+                </div>
+                <div class="col-md-6">
+                    <p class="text8 text7">Contact Email</p>
+                    <p class="text7"><%= ngo.contact_email %></p>
                 </div>
                 <div class="col-md-6">
                     <p class="text8 text7">Contact Phone Number</p>
@@ -47,23 +51,23 @@
                     <p class="text8 text7">Our fees</p>
                     <p class="text7">No fees</p>
                 </div>
-                <div style="padding-left: 20px;">
-                    <p class="text8 text7">What we need</p>
-                    <p class="text7">Description of volunteers work goes here</p>
-                    <p class="text8 text7">When we need volunteers</p>
-                    <p class="text7">Description time we need volunteers work goes here</p>
-                    <button class="header-btn">Join Nonprofit</button>
-                </div>
+                <div class="container"></div>
             </div>
 
         </div>
         <div class="col-sm-4 col-md-3 col-lg-2" id="profile">
+            <br><br>
             <div class="card-view">
-                <h4>
-                    Donate into this NGO account
-                </h4>
-                <a href="/<%= ngo.ngo_name %>/give"><button class="header-btn">DONATE</button>
+                <div class="text-center">
+                    <a href="/<%= ngo.ngo_name %>/terms"><button class="header-btn">Apply to
+                            Volunteer</button></a>
+                </div>
+                <br>
+                <div class="text-center">
+                    <a href="/<%= ngo.ngo_name %>/give"><button class="header-btn">DONATE</button>
+                </div>
             </div>
+            <br><br>
             <% } else { %>
             <p class="text3">No ngo</p>
             <% } %>

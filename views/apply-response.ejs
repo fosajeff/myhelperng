@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thank You</title>
+    <link rel="icon" href="../images/favicon.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="../stylesheets/header-footer.css">
+    <link rel="stylesheet" href="../stylesheets/volunteer-dashboard.css">
+    <link rel="stylesheet" href="../stylesheets/ngo-dashboard.css">
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/ngo-dashboard.js"></script>
+</head>
+<%- include('partials/nav') %>
+
+<body>
+    <br>
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="card-view text-center">
+            <h4 class="text-4">
+                <%= msg %>
+            </h4>
+            <br><br>
+            <a class="text-4" href="/orgs/<%= ngo.ngo_name %>">Return to <%= ngo.ngo_name %> profile</a>
+        </div>
+        <br>
+
+    </div>
+    <div class="container"></div>
+    <%- include('partials/footer') %>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Terms and Condition</title>
+    <link rel="icon" href="../images/favicon.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="../stylesheets/header-footer.css">
+    <link rel="stylesheet" href="../stylesheets/volunteer-dashboard.css">
+    <link rel="stylesheet" href="../stylesheets/ngo-dashboard.css">
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/ngo-dashboard.js"></script>
+</head>
+<%- include('partials/nav') %>
+
+<body>
+    <br>
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="card-view text-center">
+
+            <div>
+                <h1 class="">Terms and Condition - <%= ngo.ngo_name %> </h1>
+                <p class="text-muted">
+                    Read the organization's terms below and click the <b>I Agree</b> button.
+                </p>
+                <hr>
+                <div style="width: 100%;">
+                    <pre class="text-7 text-center">
+                        <%= ngo.terms_and_condition %>
+                    </pre>
+                </div>
+                <div class="card-view">
+                    <b>Contact Info</b>
+                    <h4 class="text-9">
+                        <%= ngo.contact_name %> <br>
+                        <%= ngo.contact_phone %> <br>
+                        <%= ngo.contact_email %>
+                    </h4>
+                </div>
+                <br>
+                <form method="GET" action="/<%= ngo.ngo_name %>/apply">
+                    <input type="checkbox" class="" required>
+                    <span class="text-7">I agree to the terms and conditions provided by <%= ngo.ngo_name %> </span>
+                    <br><br>
+                    <div class="col-sm-4 col-md-3 col-lg-2" id="profile">
+                        <button type="submit" class="btn btn-primary">I
+                            Agree</button> &nbsp;
+                        <a href="/orgs/<%= ngo.ngo_name %>"><span>Cancel</span></a>
+                    </div>
+                </form>
+                <br><br>
+            </div>
+
+        </div>
+
+        <br><br>
+    </div>
+    <div class="container"></div>
+    <%- include('partials/footer') %>
+</body>
+
+</html>

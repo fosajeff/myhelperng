@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Volunteer Application</title>
+    <link rel="icon" href="../images/favicon.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="../stylesheets/header-footer.css">
+    <link rel="stylesheet" href="../stylesheets/volunteer-dashboard.css">
+    <link rel="stylesheet" href="../stylesheets/ngo-dashboard.css">
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/ngo-dashboard.js"></script>
+</head>
+<%- include('partials/nav') %>
+
+<body>
+    <br>
+    <%- messages("message", locals) %>
+    <% if (errors) { %>
+    <% errors.forEach(error => { %>
+    <center>
+        <div style="width: 80%;" class="alert alert-danger text-center"><%= error.msg %></div>
+    </center>
+    <% }) %>
+    <% } %>
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <div>
+            <center>
+                <div>
+                    <form class="card-view-3" style="max-width: 600px; text-align: left;" method="POST"
+                        action="/<%= ngo %>/apply">
+                        <div>
+                            <div>
+                                <label class="text6">When are you starting?</label><br>
+                                <input type="date" name="start_date" placeholder="Start volunteering date"
+                                    class="form-control form-text" required>
+                            </div>
+                            <br>
+                            <div>
+                                <label class="text6">How long do you want to stay?</label><br>
+                                <select class="form-control form-text" name="stay_number" required>
+                                    <option>--Select--</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                    <option>11</option>
+                                    <option>12</option>
+                                    <option>13</option>
+                                    <option>14</option>
+                                    <option>15</option>
+                                    <option>16</option>
+                                    <option>17</option>
+                                    <option>18</option>
+                                    <option>19</option>
+                                    <option>20</option>
+                                    <option>21</option>
+                                    <option>22</option>
+                                    <option>23</option>
+                                    <option>24</option>
+                                    <option>25</option>
+                                    <option>26</option>
+                                    <option>27</option>
+                                    <option>28</option>
+                                    <option>29</option>
+                                    <option>30</option>
+                                </select>
+                                &nbsp;
+                                <select class="form-control form-text" name="stay_duration" required>
+                                    <option>Days</option>
+                                    <option>Weeks</option>
+                                    <option>Months</option>
+                                </select>
+                            </div>
+                            <br>
+                            <div>
+                                <label class="text6">How many volunteers (including yourself)?</label><br>
+                                <select class="form-control form-text" name="no_volunteers" required>
+                                    <option>--Select--</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                    <option>11</option>
+                                    <option>12</option>
+                                    <option>13</option>
+                                    <option>12</option>
+                                    <option>15</option>
+                                </select>
+                            </div>
+                            <br>
+                        </div>
+                        <div>
+                            <div style="padding:0">
+                                <label class="text6">Phone Number (A number we can call in case we
+                                    need more information from you urgently)</label><br>
+                                <input class="form-control form-text" name="phone_number" type="text" required>
+                            </div>
+                            <br>
+                            <div style="padding:0">
+                                <label class="text6">Occupation</label><br>
+                                <input class="form-control form-text" name="occupation" type="text" placeholder="">
+                            </div>
+                            <br>
+                            <div>
+                                <label class="text6">Gender</label><br>
+                                <select class="form-control form-text" name="gender" required>
+                                    <option>--Select--</option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Other</option>
+                                </select>
+                            </div><br>
+                            <div>
+                                <label class="text6">Age</label><br>
+                                <input type="text" name="age" placeholder="" class="form-control form-text">
+                            </div><br>
+                        </div>
+                        <div>
+                            <div>
+                                <label class="text6">Any question or note?</label><br>
+                                <input type="text" name="other" placeholder="" class="form-control form-text" />
+                            </div>
+                        </div>
+                        <div class="container"></div>
+                        <br>
+                        <div class="text-center">
+                            <input class="btn btn-primary" type="submit" value="Submit Application">
+                        </div>
+                    </form>
+                </div>
+            </center>
+            <br><br>
+        </div>
+    </div>
+    <div class="container"></div>
+    <%- include('partials/footer') %>
+</body>
+
+</html>

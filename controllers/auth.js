@@ -30,6 +30,7 @@ exports.volunteerSignUp = (req, res) => {
     res.locals.title = "Volunteer Join | MyHelperNg";
     res.render("auth/volunteer-signup", {
       errors: errors,
+      user: null,
     });
   } else {
     Volunteer.findOne({ email: req.body.email }, function (err, user) {
@@ -46,6 +47,7 @@ exports.volunteerSignUp = (req, res) => {
         res.locals.title = "Volunteer Join | MyHelperNg";
         res.render("auth/volunteer-signup", {
           errors: errors,
+          user: null,
         });
       } else {
         bcrypt
@@ -263,6 +265,14 @@ exports.updateNgoProfile = (req, res) => {
     ? (reg_number = updatedBody.reg_number)
     : (reg_number = req.user.reg_number);
 
+  updatedBody.mission_statement
+    ? (mission_statement = updatedBody.mission_statement)
+    : (mission_statement = req.user.mission_statement);
+
+  updatedBody.terms_and_condition
+    ? (terms_and_condition = updatedBody.terms_and_condition)
+    : (terms_and_condition = req.user.terms_and_condition);
+
   Ngo.updateOne(
     { email: req.user.email },
     {
@@ -277,6 +287,8 @@ exports.updateNgoProfile = (req, res) => {
         link,
         causes,
         reg_number,
+        terms_and_condition,
+        mission_statement,
       },
     }
   )

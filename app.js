@@ -75,7 +75,7 @@ const authRouter = require("./routes/auth");
 // const usersRouter = require("./routes/users");
 
 // set routes
-app.use("/", indexRouter);
+app.use(indexRouter);
 app.use(authRouter);
 // app.use("/users", usersRouter);
 
@@ -104,12 +104,14 @@ mongoose
     useUnifiedTopology: true,
   })
   .then((db) => {
+    app.listen(5000);
     console.log("Database connected successfully");
     // app.listen(PORT, () => console.log(`***Server running on PORT ${PORT}***`));
   })
   .catch((err) => console.log("Connection to database failed =>", err));
 
 app.all("*", (req, res) => {
-  res.send({ message: "404 - Error Page" });
+  res.locals.title = "Page Not Found";
+  res.render("404");
 });
 module.exports = app;
