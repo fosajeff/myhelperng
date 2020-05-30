@@ -283,3 +283,21 @@ a:hover {
     -webkit-transform: translateY(-8px);
     transform: translateY(-8px);
 }
+
+/*style for 404 page*/
+.wrap-404{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.image-404{
+    display:block;
+    margin:auto;
+    width:200px;
+}
+.text-center{
+    text-align: center;
+}
+button:focus{
+    outline:none;
+}
