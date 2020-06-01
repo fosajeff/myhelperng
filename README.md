@@ -4,10 +4,10 @@
 Contributors - Team foxtrot-flair, project phase StartNG '20
 ___
 
-@Sahmie - Backend | DevOp | Team Lead
-@Tibesti - Frontend
-@Belrah - Frontend | Content Creator
-@fosajeff - Backend
+@Sahmie - Backend | DevOp | Team Lead    
+@Tibesti - Frontend  
+@Belrah - Frontend | Content Creator  
+@fosajeff - Backend  
 
  #### Description
 
