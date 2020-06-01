@@ -1,6 +1,14 @@
 ## Project Name:
  ### MyHelperNg
 
+Contributors - Team foxtrot-flair, project phase StartNG '20
+___
+
+@Sahmie - Backend | DevOp | Team Lead
+@Tibesti - Frontend
+@Belrah - Frontend | Content Creator
+@fosajeff - Backend
+
  #### Description
 
 MyHelpNg is a platform that aims to connect volunteers seeking to offer their skills/expertise and time with NGOs/charity organizations that needs those skills/services. 
